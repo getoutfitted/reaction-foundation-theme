@@ -1,5 +1,7 @@
 # Reaction Commerce Foundation 5 Starter Theme
 
+### This repo is not functional, nor live on atmosphere currently
+
 Built on top of https://github.com/juliancwirko/meteor-zf5/
 and https://github.com/fourseven/meteor-scss
 

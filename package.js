@@ -9,9 +9,3 @@ Package.onUse(function(api) {
   api.versionsFrom('METEOR@1.0');
   api.use('juliancwirko:zf5@1.0.1')
 });
-//
-// Package.onTest(function(api) {
-//   api.use('tinytest');
-//   api.use('reaction-foundation-theme');
-//   api.addFiles('reaction-foundation-theme-tests.js');
-// });
