@@ -1,0 +1,173 @@
+.navbar-shop {
+  background-color: @navbar-default-bg;
+  color: @navbar-default-link-color;
+  a, a:hover, a:focus, .dropdown-toggle {
+    color: @navbar-default-link-color;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.ltr({ 
+  // This is for making sure WebKit knows the "default" direction when switching back from RTL.
+  // It solves a bug where some of the elements stayed RTL because the Computed Style on Document still says direction: rtl
+  direction: ltr;
+});
+
+.rtl({
+  direction: rtl;
+  text-align: right;
+});
+
+.navbar-brand {
+  .margin-left(10px);
+}
+
+.navbar-cart {
+  .float(right);
+  position: relative;
+}
+
+.navbar-languages {
+  .float(right);
+  padding: @navbar-padding-vertical (@navbar-padding-horizontal * 2);
+  height: @navbar-height;
+  &:hover {
+    background-color: @navbar-default-toggle-icon-bar-bg;
+    border-color: @navbar-default-toggle-border-color;
+  }
+  .dropdown-menu {
+    margin-top: @navbar-padding-vertical;
+  }
+}
+
+.navbar-accounts {
+  .float(right);
+  height: @navbar-height;
+  padding: @navbar-padding-vertical;
+  .padding-left(@navbar-padding-vertical);
+
+  &:hover {
+    background-color: @navbar-default-toggle-icon-bar-bg;
+    border-color: @navbar-default-toggle-border-color;
+  }
+  &:active {
+    background-color: @navbar-default-toggle-icon-bar-bg;
+    border-color: @navbar-default-toggle-border-color;
+  }
+  .dropdown{
+    .circular-icon {
+      width: 40px;
+      height: 40px;
+      margin: -15px 5px;
+      border: 2px solid rgba(129, 122, 122, 0.62);
+      border-radius: 50%;
+      padding: 10px;
+      display: inline-block;
+    }
+
+    .user-accounts-dropdown {
+      min-width: 215px;
+      min-height: 225px;
+      padding: 10px;
+    }
+
+    .user-accounts-dropdown-content {
+      min-height: 155px;
+      margin-bottom: 10px;
+      color: @gray-darker;
+    }
+
+    .user-accounts-dropdown-apps {
+      margin-top: 10px;
+      i { font-size: 45px; }
+    }
+
+    .dropdown-apps-icon {
+      cursor: pointer;
+      display: inline-block;
+      width: 50px;
+      .margin-right(15px);
+      text-align: center;
+      padding: 5px;
+
+      a {
+        color: @gray;
+        text-decoration: none;
+      }
+      a:hover, a:focus {
+        color: @gray-darker;
+        text-decoration: none;
+        background-color: transparent;
+      }
+    }
+
+    .icon-text {
+      position: relative;
+      bottom: 7px;
+      text-align: center;
+      font-size: 10px;
+    }
+
+  }
+
+  .dropdown-menu {
+    border: 1px solid @dropdown-border;
+    margin-top: 13px;
+  }
+
+  .additional-link-container {
+    a {
+      color: @link-color;
+    }
+    a:hover {
+      color: @link-hover-color;
+      background-color: transparent;
+    }
+  }
+}
+
+.navbar-primary-tags {
+  background-color: @navbar-inverse-bg;
+  text-transform: uppercase;
+  line-height: 25px;
+  font-size: 10px;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+.navbar-tags  {
+  .padding-left(5px);
+
+  a {
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: (@navbar-padding-vertical + 2px) 2rem;
+    color: @navbar-inverse-link-color;
+  }
+  a:hover {
+    color: @navbar-inverse-link-hover-color;
+    text-decoration: none;
+    background-color: @navbar-inverse-link-hover-bg;
+  }
+  a:active {
+    color: @navbar-inverse-link-active-color;
+    text-decoration: none;
+    background-color: @navbar-inverse-link-active-bg;
+  }
+}
+
+@media only screen and (max-width: @screen-xs-max) {
+  .navbar-tags > a {
+    padding: @navbar-padding-vertical .8rem;
+  }
+  .navbar-accounts {
+    padding-top: (@navbar-padding-vertical + 3px);
+    #logged-in-display-name {
+      display: none;
+    }
+    .dropdown-menu {
+      .right(-60px);
+    }
+  }
+}

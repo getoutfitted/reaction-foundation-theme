@@ -1,0 +1,29 @@
+.address-book {
+  .list-group-item {
+    cursor: pointer;
+    font-size: @font-size-small;
+    a {
+      text-decoration: none;
+      color: @text-color;
+    }
+    a .active {color: @body-bg;}
+  }
+
+  .address-icons {
+    opacity:0.6;
+  }
+  .address-icons:hover {
+    opacity:0.9;
+    cursor: pointer;
+  }
+
+  .address-options {
+    .padding-left(10px);
+    margin-top: -25px;
+    padding-bottom: 15px;
+    .form-group {
+      height: 15px;
+      font-size: @font-size-small;
+    }
+  }
+}
