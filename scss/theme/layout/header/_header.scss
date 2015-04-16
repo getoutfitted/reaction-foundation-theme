@@ -1,61 +1,50 @@
 .navbar-shop {
-  background-color: @navbar-default-bg;
-  color: @navbar-default-link-color;
+  background-color: $topbar-bg-color;
+  color: $topbar-link-color;
   a, a:hover, a:focus, .dropdown-toggle {
-    color: @navbar-default-link-color;
+    color: $topbar-link-color;
     cursor: pointer;
     text-decoration: none;
   }
 }
 
-.ltr({ 
-  // This is for making sure WebKit knows the "default" direction when switching back from RTL.
-  // It solves a bug where some of the elements stayed RTL because the Computed Style on Document still says direction: rtl
-  direction: ltr;
-});
-
-.rtl({
-  direction: rtl;
-  text-align: right;
-});
-
 .navbar-brand {
-  .margin-left(10px);
+  margin-#{$left}: 10px;
 }
 
 .navbar-cart {
-  .float(right);
+  float: $right;
   position: relative;
 }
 
 .navbar-languages {
-  .float(right);
-  padding: @navbar-padding-vertical (@navbar-padding-horizontal * 2);
-  height: @navbar-height;
+  float: $right;
+  padding: $topbar-link-padding;
+  height: $topbar-height;
   &:hover {
-    background-color: @navbar-default-toggle-icon-bar-bg;
-    border-color: @navbar-default-toggle-border-color;
+    background-color: $topbar-link-bg-color-hover;
+    border-color: $topbar-link-bg-color-hover;
   }
   .dropdown-menu {
-    margin-top: @navbar-padding-vertical;
+    margin-top: $topbar-link-padding;
   }
 }
 
 .navbar-accounts {
-  .float(right);
-  height: @navbar-height;
-  padding: @navbar-padding-vertical;
-  .padding-left(@navbar-padding-vertical);
+  float: $right;
+  height: $topbar-height;
+  padding: $topbar-link-padding;
+  padding-#{$left}: $topbar-link-padding;
 
   &:hover {
-    background-color: @navbar-default-toggle-icon-bar-bg;
-    border-color: @navbar-default-toggle-border-color;
+    background-color: $topbar-link-bg-color-hover;
+    border-color: $topbar-link-bg-color-hover;
   }
   &:active {
-    background-color: @navbar-default-toggle-icon-bar-bg;
-    border-color: @navbar-default-toggle-border-color;
+    background-color: $topbar-link-bg-color-hover;
+    border-color: $topbar-link-bg-color-hover;
   }
-  .dropdown{
+  .dropdown {
     .circular-icon {
       width: 40px;
       height: 40px;
@@ -75,7 +64,7 @@
     .user-accounts-dropdown-content {
       min-height: 155px;
       margin-bottom: 10px;
-      color: @gray-darker;
+      color: $gray-darker;
     }
 
     .user-accounts-dropdown-apps {
@@ -87,16 +76,16 @@
       cursor: pointer;
       display: inline-block;
       width: 50px;
-      .margin-right(15px);
+      margin-#{$right}: 15px;
       text-align: center;
       padding: 5px;
 
       a {
-        color: @gray;
+        color: $gray;
         text-decoration: none;
       }
       a:hover, a:focus {
-        color: @gray-darker;
+        color: $gray-darker;
         text-decoration: none;
         background-color: transparent;
       }
@@ -112,23 +101,23 @@
   }
 
   .dropdown-menu {
-    border: 1px solid @dropdown-border;
+    border: 1px solid $topbar-dropdown-bg;
     margin-top: 13px;
   }
 
   .additional-link-container {
     a {
-      color: @link-color;
+      color: $topbar-link-color;
     }
     a:hover {
-      color: @link-hover-color;
+      color: $topbar-link-color-hover;
       background-color: transparent;
     }
   }
 }
 
 .navbar-primary-tags {
-  background-color: @navbar-inverse-bg;
+  background-color: $topbar-secondary-bg-color;
   text-transform: uppercase;
   line-height: 25px;
   font-size: 10px;
@@ -137,37 +126,37 @@
 }
 
 .navbar-tags  {
-  .padding-left(5px);
+  padding-#{$left}: 5px;
 
   a {
     margin-left: -8px;
     margin-right: -8px;
-    padding: (@navbar-padding-vertical + 2px) 2rem;
-    color: @navbar-inverse-link-color;
+    padding: $topbar-secondary-link-padding;
+    color: $topbar-secondary-link-color;
   }
   a:hover {
-    color: @navbar-inverse-link-hover-color;
+    color: $topbar-secondary-link-color-hover;
     text-decoration: none;
-    background-color: @navbar-inverse-link-hover-bg;
+    background-color: $topbar-secondary-link-bg;
   }
   a:active {
-    color: @navbar-inverse-link-active-color;
+    color: $topbar-secondary-link-color-active;
     text-decoration: none;
-    background-color: @navbar-inverse-link-active-bg;
+    background-color: $topbar-secondary-link-bg-active;
   }
 }
 
-@media only screen and (max-width: @screen-xs-max) {
+@media #{$small-only} {
   .navbar-tags > a {
-    padding: @navbar-padding-vertical .8rem;
+    padding: $topbar-link-padding;
   }
   .navbar-accounts {
-    padding-top: (@navbar-padding-vertical + 3px);
+    padding-top: $topbar-link-padding;
     #logged-in-display-name {
       display: none;
     }
     .dropdown-menu {
-      .right(-60px);
+      #{$right}: -60px;
     }
   }
 }

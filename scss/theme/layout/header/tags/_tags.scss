@@ -5,7 +5,7 @@
 
 // Slide the tag edit icon over a bit
 .header-edit-tag {
-  .margin-left(-15px);
+  margin-#{$left}: -15px;
 }
 
 // size the navigation and when editing override navbar settings
@@ -25,39 +25,39 @@
 }
 // Tag edit elements
 .tag-input-group {
-  float:none;
-  .padding-right(3px);
+  float: none;
+  padding-#{$right}: 3px;
   position: relative;
 
   .tag-input-group-handle {
     position: absolute;
     cursor: move;
-    color: @input-color-placeholder;
-    .left(4px);
+    color: $input-color-placeholder;
+    #{$left}: 4px;
     top: 4px;
-    .padding-left(4px);
+    padding-#{$left}: 4px;
   }
   input {
-    .padding-left(25px);
-    .padding-right(20px);
-    border-radius: @border-radius-base;
-    border: 1px dotted @input-border;
-    background-color: @input-bg;
-    height: @input-height-small;
+    padding-#{$left}: 25px;
+    padding-#{$right}: 20px;
+    border-radius: $global-radius;
+    border: 1px dotted $input-border-color;
+    background-color: $input-bg-color;
+    height: $input-height-small;
     width: 130px;
-    color: @input-color;
+    color: $input-font-color;
   }
   input:focus {
     outline: none;
-    border-color: @input-border-focus;
-    box-shadow: 0 0 10px @input-border-focus;
+    border-color: $input-focus-border-color;
+    box-shadow: 0 0 10px $input-focus-border-color;
   }
   .tag-input-group-remove {
     position: absolute;
-    .right(6px);
+    #{$right}: 6px;
     top: 4px;
-    color: @input-color-placeholder;
-    .padding-right(4px);
+    color: $input-color-placeholder;
+    padding-#{$right}: 4px;
   }
   .tags-submit-new {
     padding-left: 5px;
