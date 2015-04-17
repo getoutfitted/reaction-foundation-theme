@@ -5,7 +5,6 @@ $gray-light:             lighten($black, 46.7%); // #777
 $gray-lighter:           lighten($black, 93.5%); // #eee
 
 $input-color-placeholder: $aluminum;
-
 $input-height-small: ($input-font-size + $form-spacing);
 
 $topbar-secondary-bg-color: #073b73;
@@ -15,6 +14,22 @@ $topbar-secondary-link-color-hover: $topbar-link-color-hover;
 $topbar-secondary-link-color-active: $topbar-link-color-active;
 $topbar-secondary-link-bg: $topbar-link-bg;
 $topbar-secondary-link-bg-active: $topbar-link-bg-active;
+
+// Cart Variables
+$cart-drawer-bg: $gray-dark;
+$cart-drawer-height: 275px;
+$cart-icon-bg: $body-bg;
+$cart-icon-badge:  #25B315;
+$cart-icon-badge-warning: #FF0000;
+$cart-icon-text: $body-font-color;
+$cart-icon-color: $body-font-color;
+$cart-icon-border-radius: 0;
+$cart-icon-border: none;
+$cart-icon-padding:  ($topbar-link-padding - remcalc(4)) remcalc(30) ($topbar-link-padding - remcalc(4)) remcalc(24);
+
+$cart-progress-active: #57aed1;
+$cart-progress-visited:  #8bc53f;
+$cart-progress-next:  #EcEcEc;
 
 // $navbar-default-bg: #2fa4e7;
 // $navbar-default-color: #fff;
