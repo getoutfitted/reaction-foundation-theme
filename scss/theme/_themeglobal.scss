@@ -1,3 +1,5 @@
+@import "foundation/functions";
+
 $gray-darker:            lighten($black, 13.5%); // #222
 $gray-dark:              lighten($black, 20%);   // #333
 $gray:                   lighten($black, 33.5%); // #555
@@ -25,7 +27,7 @@ $cart-icon-text: $body-font-color;
 $cart-icon-color: $body-font-color;
 $cart-icon-border-radius: 0;
 $cart-icon-border: none;
-$cart-icon-padding:  ($topbar-link-padding - remcalc(4)) remcalc(30) ($topbar-link-padding - remcalc(4)) remcalc(24);
+$cart-icon-padding: 8px 30px 8px 24px;
 
 $cart-progress-active: #57aed1;
 $cart-progress-visited:  #8bc53f;

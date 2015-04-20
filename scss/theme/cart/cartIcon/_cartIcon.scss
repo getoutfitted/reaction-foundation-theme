@@ -1,4 +1,8 @@
-.cart-icon {
+.top-bar-section ul {
+  font-size: 14px;
+}
+
+.top-bar-section ul li.cart-icon {
   margin-#{$left}: 2px;
   color: $cart-icon-text;
   border: $cart-icon-border;
@@ -7,18 +11,18 @@
   position: relative;
   background-color: $cart-icon-bg;
   height: $topbar-height;
+  cursor: pointer;
   a i {
     color: $cart-icon-color;
     background-color: transparent;
   }
-  .badge {
+  .label {
     position: absolute;
     bottom: 4px;
     #{$right}: 1px;
-    background-color: $cart-icon-badge;
   }
 
-  .badge-warning {
+  .label.alert {
     #{$right}: 33px;
     font-weight:bold;
     font-size:inherit;

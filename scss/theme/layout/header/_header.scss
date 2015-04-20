@@ -116,40 +116,7 @@
   }
 }
 
-.navbar-primary-tags {
-  background-color: $topbar-secondary-bg-color;
-  text-transform: uppercase;
-  line-height: 25px;
-  font-size: 10px;
-  font-weight: 700;
-  padding-top: 10px;
-}
-
-.navbar-tags  {
-  padding-#{$left}: 5px;
-
-  a {
-    margin-left: -8px;
-    margin-right: -8px;
-    padding: $topbar-secondary-link-padding;
-    color: $topbar-secondary-link-color;
-  }
-  a:hover {
-    color: $topbar-secondary-link-color-hover;
-    text-decoration: none;
-    background-color: $topbar-secondary-link-bg;
-  }
-  a:active {
-    color: $topbar-secondary-link-color-active;
-    text-decoration: none;
-    background-color: $topbar-secondary-link-bg-active;
-  }
-}
-
 @media #{$small-only} {
-  .navbar-tags > a {
-    padding: $topbar-link-padding;
-  }
   .navbar-accounts {
     padding-top: $topbar-link-padding;
     #logged-in-display-name {
