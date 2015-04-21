@@ -37,7 +37,7 @@
   .product-grid-item .label {
     position: absolute;
     top: 5px;
-    #{$left}: 5px;
+    #{$left}: 1rem;
   }
 
   .product-grid-item-images {
