@@ -1,42 +1,44 @@
 .product-grid {
   // This should be in reset or more specific.
-  *, *:before, *:after {box-sizing:  border-box !important;}
-  .img-responsive {width:100%;}
-  a:hover, a:visited, a:link, a:active {
-    text-decoration: none;
-  }
+  // *, *:before, *:after {box-sizing:  border-box !important;}
+  // .img-responsive {width:100%;}
+  //
+  // a:hover, a:visited, a:link, a:active {
+  //   text-decoration: none;
+  // }
 
-  .product-grid-list {
-   -moz-column-width: $product-grid-columns-size;
-   -webkit-column-width: $product-grid-columns-size;
-   -moz-column-gap: 1em;
-   -webkit-column-gap: 1em;
-   .overlay {
+  // .product-grid-list {
+  //   -moz-column-width: $product-grid-columns-size;
+  //   -webkit-column-width: $product-grid-columns-size;
+  //   -moz-column-gap: 1em;
+  //   -webkit-column-gap: 1em;
+  // }
+  
+  .product-grid-list .overlay {
     color: $body-font-color;
     opacity: 0.7;
     width: 100%;
     padding-top: 10px;
-    .currency-symbol {
-      white-space: nowrap;
-      text-decoration: none;
-      text-align: center;
-      }
-    }
+  }
+  
+  .product-grid-list .overlay .currency-symbol {
+    white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
   }
 
   .product-grid-item {
     position: relative;
-    display: inline-block;
-    margin:  0.25rem;
-    padding:  1rem;
-    width:  100%;
-    .badge {
-      position: absolute;
-      top: 20px;
-      #{$left}: 19px;
-    }
+    // display: inline-block;
+    // margin:  0.25rem;
+    // width:  100%;
   }
-
+    
+  .product-grid-item .label {
+    position: absolute;
+    top: 5px;
+    #{$left}: 5px;
+  }
 
   .product-grid-item-images {
     padding: 1px;
@@ -57,22 +59,29 @@
 
   .product-grid-controls {
     position: relative;
-    // bottom: 30px;
+    color: $tuatara;
+    font-size: 13px;
     margin-top: -30px;
     padding-bottom: 10px;
-    opacity: 0.7;
     padding-left: 5px;
     padding-right: 5px;
-    // background-color: black;
-    .delete-product {
-      float: $right;
-      }
-    .clone-product {
-      margin-#{$left}: 10px;
-      }
-    .fa {
-      cursor: pointer;
-      padding: 5px
-    }
+  }
+  .product-grid-controls .delete-product {
+    float: $right;
+  }
+  
+  .product-grid-controls .clone-product {
+    margin-#{$left}: 10px;
+  }
+  
+  .product-grid-controls .fa {
+    cursor: pointer;
+    opacity: 0.6;
+    padding: 5px
+  }
+  
+  .product-grid-controls .fa:hover {
+    opacity: 1;
+    color: $brand-light-blue;
   }
 }
