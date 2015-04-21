@@ -32,14 +32,17 @@
     margin-#{$left}: -10px;
   }
   .vendor { margin-top: -5px; }
+  .vendor-edit-input { margin-bottom: 0; }
 
   //== description and textarea
   .description, .description-edit {
-    padding-top: 15px;
-    font-weight: 300;
+    padding-top: 5px;
+    font-weight: 400; // Updated from 300
     font-size: $product-description-font-size;
-    line-height: 24px; // ~24px
+    line-height: 24px;
   }
+  
+  .description-edit-input { padding-bottom: 15px; }
 
   //== main product page title
   .title  {

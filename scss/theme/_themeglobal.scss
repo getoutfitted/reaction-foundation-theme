@@ -6,6 +6,8 @@ $gray:                   lighten($black, 33.5%); // #555
 $gray-light:             lighten($black, 46.7%); // #777
 $gray-lighter:           lighten($black, 93.5%); // #eee
 
+$list-group-hover-bg: $white-smoke;
+
 $input-color-placeholder: $aluminum;
 $input-height-small: ($input-font-size + $form-spacing);
 
