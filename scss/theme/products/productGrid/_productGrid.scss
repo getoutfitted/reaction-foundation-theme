@@ -36,6 +36,8 @@
     
   .product-grid-item .label {
     position: absolute;
+    font-weight: bold;
+    font-size: 12px;
     top: 5px;
     #{$left}: 1rem;
   }

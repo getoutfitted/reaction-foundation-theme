@@ -34,11 +34,18 @@ $cart-progress-visited:  #8bc53f;
 $cart-progress-next:  #EcEcEc;
 
 
-//== Product Grid
+// Product Grid
 $product-overlay-bg: $body-bg;
 $grid-gutter-width: 10px; //inline forms will get messed up with larger values
 $drag-drop-zone-bg: #F0F8FF;
 $product-grid-columns-size: 28em;
+
+// Product Page
+$product-title-font-size: 50px;
+$product-title-font-weight: $font-weight-bold;
+$product-page-title-font-size: 32px;
+$product-price-font-size: 50px;
+$product-description-font-size: 16px;
 
 // LTR / RTL vars
 $left: left !default;
