@@ -6,6 +6,12 @@ $gray:                   lighten($black, 33.5%); // #555
 $gray-light:             lighten($black, 46.7%); // #777
 $gray-lighter:           lighten($black, 93.5%); // #eee
 
+$brand-primary:         darken(#428bca, 6.5%); // #337ab7
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
 $list-group-hover-bg: $white-smoke;
 
 $input-color-placeholder: $aluminum;
