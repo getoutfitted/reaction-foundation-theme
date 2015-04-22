@@ -6,3 +6,12 @@
   list-style: none;
   margin-left: 0;
 }
+
+input[type="text"].input-sm,
+input[type="number"].input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
