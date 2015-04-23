@@ -8,27 +8,50 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  .accounts-layout;
+  
+  .accounts-layout {
+    font-size: 18px;
+    .or { text-align: center; padding-top: 5px;}
+    .hline { text-decoration: line-through; color: $gray-lighter; }
+    .or-text { font-weight: bold; }
+    .additional-link {
+      @include float(right);
+      @include margin-left(15px);
+    }
+    #forgot-password-link {
+      @include margin-left(0);
+      @include float(left);
+    }
+  }
 }
 
 .accounts-layout {
+  font-size: 18px;
   .or { text-align: center; padding-top: 5px;}
-  .hline { text-decoration: line-through; color: @gray-lighter; }
+  .hline { text-decoration: line-through; color: $gray-lighter; }
   .or-text { font-weight: bold; }
   .additional-link {
-    .float(right);
-    .margin-left(15px);
+    @include float(right);
+    @include margin-left(15px);
   }
   #forgot-password-link {
-    .margin-left(0);
-    .float(left);
+    @include margin-left(0);
+    @include float(left);
   }
 }
 
+.top-bar-section li:not(.has-form) a.additional-link:not(.button) {
+  background: transparent;
+  color: #2FA4E7;
+  display: inline-block;
+  padding: 0;
+  line-height: 1.6rem;
+  text-decoration: none;
+}
 
 .checkout-guest {
-  border-right: 1px solid @gray-light;
-  font-size: @font-size-base;
+  border-right: 1px solid $gray-light;
+  font-size: 14px;
   position:absolute;
   top:50%;
   width: 45%;
@@ -40,9 +63,9 @@
   padding: 10px;
 }
 
-@media screen and (max-width: @screen-xs-max) {
+@media #{small-only} {
   .checkout-guest {
-    border-bottom: 1px solid @gray-light;
+    border-bottom: 1px solid $gray-light;
     margin-bottom: 40px;
     padding: 10px 50px 30px;
     position: initial;

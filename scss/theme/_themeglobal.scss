@@ -1,5 +1,7 @@
 @import "foundation/functions";
 
+$large-font-size:        $h3-font-size;
+
 $gray-darker:            lighten($black, 13.5%); // #222
 $gray-dark:              lighten($black, 20%);   // #333
 $gray:                   lighten($black, 33.5%); // #555
@@ -16,6 +18,7 @@ $list-group-hover-bg: $white-smoke;
 
 $input-color-placeholder: $aluminum;
 $input-height-small: ($input-font-size + $form-spacing);
+$input-height-base: ($input-font-size + $form-spacing);
 
 $topbar-secondary-bg-color: #073b73;
 $topbar-secondary-link-color: $topbar-link-color;
@@ -54,6 +57,119 @@ $product-title-font-weight: $font-weight-bold;
 $product-page-title-font-size: 32px;
 $product-price-font-size: 50px;
 $product-description-font-size: 16px;
+
+// text-direction mixins
+
+//
+// @mixin rtl($amount: 10px, $direction: right, $position-left: false, $position-right: false, $float: false, $margin-left: false, $margin-right: false, $padding-left: false, $padding-right: false, $clear: false, $text-align: false) {
+//   html.rtl & {
+//     @if $position-left  { right: $amount; }
+//     @if $position-right { left: $amount; }
+//     @if $margin-left { margin-right: $amount; }
+//     @if $margin-right { margin-left: $amount; }
+//     @if $padding-left { padding-right: $amount; }
+//     @if $padding-right { padding-left: $amount; }
+//     @if $float and $direction == left { float: right; }
+//     @if $float and $direction == right { float: left; }
+//     @if $float and not ($direction == left) and not ($direction == right) { float: $direction; }
+//     @if $clear and $direction == left { clear: right; }
+//     @if $clear and $direction == right { clear: left; }
+//     @if $clear and not ($direction == left) and not ($direction == right) { clear: $direction; }
+//     @if $text-align and $direction == left { text-align: right; }
+//     @if $text-align and $direction == right { text-align: left; }
+//     @if $text-align and not ($direction == left) and not ($direction == right) { text-align: $direction; }
+//   }
+// }
+
+ // text-direction mixin defaults
+ // $amount: 0px,
+ // $direction: left,
+ // $position-left: false,
+ // $position-right: false,
+ // $float: false,
+ // $margin-left: false,
+ // $margin-right: false,
+ // $padding-left: false,
+ // $padding-right: false,
+ // $clear: false,
+ // $text-align: false
+ // Would be awesome to be able to indent this, but: https://github.com/sass/sass/issues/216
+@mixin text-direction($amount: 10px, $direction: left, $position-left: false, $position-right: false, $float: false, $margin-left: false, $margin-right: false, $padding-left: false, $padding-right: false, $clear: false, $text-align: false) {
+  // For LTR languages
+  html:not(.rtl) & {
+    @if $position-left  { left: $amount; }
+    @if $position-right { right: $amount; }
+    @if $margin-left { margin-left: $amount; }
+    @if $margin-right { margin-right: $amount; }
+    @if $padding-left { padding-left: $amount; }
+    @if $padding-right { padding-right: $amount; }
+    @if $float and $direction == left { float: left; }
+    @if $float and $direction == right { float: right; }
+    @if $float and not ($direction == left) and not ($direction == right) { float: $direction; }
+    @if $clear and $direction == left { clear: left; }
+    @if $clear and $direction == right { clear: right; }
+    @if $clear and not ($direction == left) and not ($direction == right) { clear: $direction; }
+    @if $text-align and $direction == left { text-align: left; }
+    @if $text-align and $direction == right { text-align: right; }
+    @if $text-align and not ($direction == left) and not ($direction == right) { text-align: $direction; }
+  }
+  // For RTL languages
+  html.rtl & {
+    @if $position-left  { right: $amount; }
+    @if $position-right { left: $amount; }
+    @if $margin-left { margin-right: $amount; }
+    @if $margin-right { margin-left: $amount; }
+    @if $padding-left { padding-right: $amount; }
+    @if $padding-right { padding-left: $amount; }
+    @if $float and $direction == left { float: right; }
+    @if $float and $direction == right { float: left; }
+    @if $float and not ($direction == left) and not ($direction == right) { float: $direction; }
+    @if $clear and $direction == left { clear: right; }
+    @if $clear and $direction == right { clear: left; }
+    @if $clear and not ($direction == left) and not ($direction == right) { clear: $direction; }
+    @if $text-align and $direction == left { text-align: right; }
+    @if $text-align and $direction == right { text-align: left; }
+    @if $text-align and not ($direction == left) and not ($direction == right) { text-align: $direction; }
+  }
+}
+
+@mixin left($x) {
+  @include text-direction($amount: $x, $position-left: true);
+}
+
+@mixin right($x) {
+  @include text-direction($amount: $x, $position-right: true);
+}
+
+@mixin margin-left($x) {
+  @include text-direction($amount: $x, $margin-left: true);
+}
+
+@mixin margin-right($x) {
+  @include text-direction($amount: $x, $margin-right: true);
+}
+
+@mixin padding-left($x) {
+  @include text-direction($amount: $x, $padding-left: true);
+}
+
+@mixin padding-right($x) {
+  @include text-direction($amount: $x, $padding-right: true);
+}
+
+@mixin float($y) {
+  @include text-direction($direction: $y, $float: true);
+}
+
+@mixin clear($y) {
+  @include text-direction($direction: $y, $clear: true);
+}
+
+@mixin text-align($y) {
+  @include text-direction($direction: $y, $text-align: true);
+}
+
+// End Text Direction Mixins
 
 // LTR / RTL vars
 $left: left !default;

@@ -1,5 +1,29 @@
 $variant-progressbar-height: 28px;
 
+// == main variant edit form
+.wire-icon-button,
+.wire-icon-button:hover,
+.wire-option-button,
+.wire-option-button:hover {
+  border: 1px solid $aluminum;
+  background: $white;
+  padding: 6px 12px;
+  border: 1px solid $aluminum;
+  border-radius: $global-radius;
+  color: $charcoal;
+}
+.wire-option-button {
+  margin-bottom: 0;
+}
+
+.wire-icon-button:hover,
+.wire-option-button:hover,
+.wire-option-button:active,
+.wire-option-button.active {
+  background: $smoke;
+  color: $charcoal;
+}
+
 .qty-label {
   @include label();
   background: $monsoon;
@@ -47,7 +71,7 @@ $variant-progressbar-height: 28px;
 
 .variant-table {
   .edit, .buy {
-    text-align: #{$right};
+    @include text-align(right);
   }
 }
 
@@ -59,7 +83,7 @@ $variant-progressbar-height: 28px;
   display: inline-block;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-#{$left}: 5px;
+  @include margin-left(5px);
   line-height: 28px;
   font-weight: 400;
   color: $jet;
@@ -68,13 +92,13 @@ $variant-progressbar-height: 28px;
 
 .variant-price {
   display: inline-block;
-  margin-#{$left}: 10px;
+  @include margin-left(10px);
   font-size: medium;
   font-weight: 500;
   line-height: 30px;
   color: $jet;
   position: absolute;
-  #{$right}: 10px;
+  @include right(10px);
 }
 
 .variant-edit {
@@ -82,7 +106,7 @@ $variant-progressbar-height: 28px;
   color: $anchor-font-color;
   position: absolute;
   border-radius: $global-radius;
-  #{$right}: -35px;
+  @include right(-35px);
   padding: 1px 8px 1px 8px;
   top: 0;
 }

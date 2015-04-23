@@ -1,3 +1,11 @@
+.add-to-cart-button {
+  @include button;
+  padding: 6px 12px;
+  border-radius: $global-radius;
+  width: 100%;
+  input[type="number"] { margin: 0; border-radius: $global-radius; padding: 1px; }
+}
+
 .pdp-container {
   width: 100%;
   input:focus::-webkit-input-placeholder { color:transparent; }
@@ -6,13 +14,18 @@
   
   .img-responsive { width: 100%; } // For Firefox: http://stackoverflow.com/questions/18846744/responsive-images-in-tables-bootstrap-3
   
-  //== minor layout adjustment for columns
+  // minor layout adjustment for columns
+  .row .row {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
   .pdp-left-column {
-    padding-#{$right}: 15px;
+    @include padding-right(15px);
   }
   
   .pdp-right-column {
-    padding-#{$left}: 15px;
+    @include padding-left(15px);
   }
   .product-details { padding-top: 25px; }
 
@@ -26,10 +39,10 @@
   .currency-symbol {
     font-weight: bold;
     font-size: $product-price-font-size;
-    margin-#{$right}: -10px;
+    @include margin-right(-10px);
   }
   .social-pricing {
-    margin-#{$left}: -10px;
+    @include margin-left(-10px);
   }
   .vendor { margin-top: -5px; }
   .vendor-edit-input { margin-bottom: 0; }
@@ -116,7 +129,7 @@
 
   .add-to-cart-text {
     font-size: 20px;
-    margin-#{$right}: 30px;
+    @include margin-right(30px);
   }
 
   #add-to-cart-quantity {
@@ -168,9 +181,6 @@
     #{$right}: 0;
   }
 }
-
-
-
 
 @media #{$small-only} {
     .pdp-title, .pdp-title h1{
