@@ -69,11 +69,11 @@
     padding-right: 5px;
   }
   .product-grid-controls .delete-product {
-    float: $right;
+    @include float(right);
   }
   
   .product-grid-controls .clone-product {
-    margin-#{$left}: 10px;
+    @include margin-left(10px);
   }
   
   .product-grid-controls .fa {

@@ -3,7 +3,7 @@
 }
 
 .top-bar-section ul li.cart-icon {
-  margin-#{$left}: 2px;
+  @include margin-left(2px);
   color: $cart-icon-text;
   border: $cart-icon-border;
   padding: $cart-icon-padding;
@@ -19,11 +19,11 @@
   .label {
     position: absolute;
     bottom: 4px;
-    #{$right}: 1px;
+    @include right(1px);
   }
 
   .label.alert {
-    #{$right}: 33px;
+    @include right(33px);
     font-weight:bold;
     font-size:inherit;
     padding:2px 8px 2px 8px;
@@ -31,10 +31,10 @@
   }
 }
 .cart-alert{
-  float: #{$right};
+  @include float(right);
   position: absolute;
   top: 0;
-  #{$right}: 76px;
+  @include right(76px);
   color: $cart-icon-text;
   background-color: $cart-icon-bg;
   display: none;
