@@ -4,7 +4,9 @@ $variant-progressbar-height: 28px;
 .wire-icon-button,
 .wire-icon-button:hover,
 .wire-option-button,
-.wire-option-button:hover {
+.wire-option-button:hover,
+.wire-button,
+.wire-button:hover {
   border: 1px solid $aluminum;
   background: $white;
   padding: 6px 12px;
@@ -12,14 +14,17 @@ $variant-progressbar-height: 28px;
   border-radius: $global-radius;
   color: $charcoal;
 }
+
 .wire-option-button {
   margin-bottom: 0;
 }
 
 .wire-icon-button:hover,
 .wire-option-button:hover,
+.wire-button:hover,
 .wire-option-button:active,
-.wire-option-button.active {
+.wire-option-button.active,
+wire-button:active {
   background: $smoke;
   color: $charcoal;
 }

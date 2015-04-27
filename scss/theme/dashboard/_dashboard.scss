@@ -1,4 +1,7 @@
-//== Dashboard Variables
+// Dashboard Variables
+$dashboard-panel-color: #EFEFEF;
+$dashboard-border-color: #d8d8d8;
+
 // Dashboard drawer
 .dashboard-drawer {
   background-color: $jet;
@@ -12,10 +15,9 @@
       color: $white;
   }
 }
-
-/* ===============================================================
-Dashboard Swiper Styles
-================================================================*/
+// **********************************************
+// Dashboard Swiper Styles
+// **********************************************
 .dashboard-container {
   height: 270px;
   width: 100%;

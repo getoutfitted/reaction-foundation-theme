@@ -1,11 +1,18 @@
 .table {
+  width: 100%;
   tbody.toggle-shop-member-permissions {
     cursor: pointer;
   }
+  
+  input[type] {
+    margin-bottom: 0;
+  }
+
   tbody.shop-member-permissions {
     border: 0;
     tr {
       td {
+        vertical-align: top;
         border: 0;
       }
       ul {
@@ -20,6 +27,9 @@
       .shop-permissions-group {
         font-weight: bold;
       }
+    }
+    tr.even, table tr.alt, tr:nth-of-type(even) {
+      background: transparent;
     }
   }
 }
