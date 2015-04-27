@@ -1,3 +1,27 @@
+.dashboard-navbar-packages {
+  overflow: hidden;
+  border-bottom: 1px solid $silver;
+}
+
 .dashboard-state-active {
-   color: @brand-success;
+   color: $brand-success;
+}
+
+.console-list {
+  margin-bottom: 0;
+}
+
+.dashboard-navbar-package {
+  display: inline-block;
+  padding: 8px 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  &:hover {
+    background: $gainsboro;
+  }
+}
+
+.active .dashboard-navbar-package {
+  background: $primary-color;
+  color: $white;
 }

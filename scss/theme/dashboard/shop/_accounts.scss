@@ -11,8 +11,8 @@
       ul {
         padding: 0;
         list-style-type: none;
-        .float(left);
-        .margin-right(30px);
+        @include float(left);
+        @include margin-right(30px);
       }
       label {
         font-weight: normal;

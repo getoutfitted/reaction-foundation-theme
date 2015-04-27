@@ -15,3 +15,19 @@ input[type="number"].input-sm {
   line-height: 1.5;
   border-radius: 3px;
 }
+
+.no-border-icon-button {
+  font-size: 14px;
+  border: none;
+  background: transparent;
+  color: $jet;
+  padding: 8px 16px;
+  border-radius: $global-radius;
+  margin-bottom:0;
+  
+  &:hover {
+    background: $gainsboro;
+    color: $jet;
+    margin-bottom:0;
+  }
+}

@@ -1,27 +1,15 @@
 //== Dashboard Variables
 // Dashboard drawer
 .dashboard-drawer {
-  background-color: @cart-drawer-bg;
+  background-color: $jet;
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
   box-shadow:         inset 0 0 10px #000000;
   a {
-    color: @dashboard-font-color;
+    color: $white;
   }
   p, a span {
-      color: @dashboard-font-color;
-  }
-}
-.dashboard-navbar-packages {
-  .nav-pills li a {border-radius: 0px;}
-  text-transform: uppercase;
-  height: 41px;
-  border-bottom: 1px solid @gray-lighter;
-  .navbar-brand a:hover {
-    color: @navbar-default-link-color;
-  }
-  .nav-pills li a:hover {
-    cursor: pointer;
+      color: $white;
   }
 }
 
@@ -76,27 +64,27 @@ Dashboard Swiper Styles
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-
-  .rtl({
-    -webkit-transition-property:-webkit-transform, right, top;
-    -moz-transition-property:-moz-transform, right, top;
-    -o-transition-property:-o-transform, right, top;
-    -ms-transition-property:-ms-transform, right, top;
-    transition-property:transform, right, top;
-  });
 }
+
+html.rtl .dashboard-widget-wrapper {
+  -webkit-transition-property:-webkit-transform, right, top;
+  -moz-transition-property:-moz-transform, right, top;
+  -o-transition-property:-o-transform, right, top;
+  -ms-transition-property:-ms-transform, right, top;
+  transition-property:transform, right, top;
+};
 
 .dashboard-widget {
   width: 260px;
   height: 250px;
-  .float(left);
+  @include float(left);
   position: relative;
   .dashboard-widget-center {
-    .margin-right(10px);
-    .margin-left(10px);
-    background-color: @list-group-bg;
-    border: 1px solid @list-group-border;
-    border-radius: @list-group-border-radius;
+    @include margin-right(10px);
+    @include margin-left(10px);
+    background-color: $white;
+    border: 1px solid $gainsboro;
+    border-radius: $global-radius;
     // centers svg,images
     bottom: 0;
     height: 250px;
@@ -124,7 +112,7 @@ Dashboard Swiper Pagination Styles
 .dashboard-pagination {
   position: relative;
   z-index: 20;
-  .left(10px);
+  @include left(10px);
   bottom: 10px;
 }
 .swiper-pagination-switch {
@@ -133,7 +121,7 @@ Dashboard Swiper Pagination Styles
   height: 8px;
   border-radius: 8px;
   background: #222;
-  .margin-right(5px);
+  @include margin-right(5px);
   opacity: 0.8;
   border: 1px solid #fff;
   cursor: pointer;

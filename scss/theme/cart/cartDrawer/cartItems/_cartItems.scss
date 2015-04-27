@@ -6,30 +6,34 @@
   .cart-labels {
     margin: -30px 0 0 0;
     height: 30px;
+    line-height:20px;
     padding: 5px;
-    background-color: @product-overlay-bg;
+    background-color: $body-bg;
     width: 235px;
     font-size: 1.1em;
     white-space: nowrap;
     overflow: hidden;
     text-align: center;
-    color: @product-overlay-text;
+    color: $jet;
     .warning {
         position:relative;
         font-weight:bold;
         font-size:inherit;
         padding:2px 8px 2px 8px;
-        background-color:#FF0000;
+        background-color: $alert-color;
+    }
+    .qty-label {
+      font-size: 14px;
     }
   }
 
   .remove-cart-item {
     position: absolute;
     top: 8px;
-    .right(8px);
-    color: @gray;
-    background-color: @alert-warning-bg;
-    border: 2px solid @gray;
+    @include right(8px);
+    color: $gray;
+    background-color: $white;
+    border: 2px solid $jet;
     padding: 5px;
     border-radius: 50%;
     z-index: 99;
