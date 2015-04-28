@@ -1,0 +1,12 @@
+<template name="foundationProducts">
+  {{> foundationProductGrid}}
+</template>
+
+<template name="foundationProductListGrid">
+  <div class="row">
+    {{> foundationProductGrid}}
+    {{#if userHasRole "admin"}}
+      {{> foundationProductList}}
+    {{/if}}
+  </div>
+</template>
