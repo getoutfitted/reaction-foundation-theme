@@ -1,0 +1,20 @@
+// Checkout Review
+.cart-checkout-steps {
+  
+  .cart-items {
+    margin-left: 1.125rem;
+    margin-right: 1.125rem;
+  }
+  
+  table thead,
+  table tr.even, table tr.alt,
+  table tr:nth-of-type(even) {
+    background: $white;
+  }
+  
+  .cart-items table { border: 0; }
+  
+  table tr td {
+    padding: 5px 0;
+  }
+}

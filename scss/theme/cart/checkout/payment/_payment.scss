@@ -1,0 +1,32 @@
+// Payment
+
+.cart-checkout-steps {
+  .panel-body .panel-group {
+    margin-left: 1.1rem;
+    margin-right: 1.1rem;
+  }
+  
+  .btn-block {
+    margin-left: 1.1rem;
+    margin-right: 1.1rem;
+  }
+}
+
+.btn-success {
+  background: $brand-success;
+  border-radius: $global-radius;
+  &:hover, &:active {
+    background: darken($brand-success, 15%);
+  }
+}
+
+.hidden {
+  @extend .hide;
+}
+
+
+//
+.col-sm-12 {
+  @extend .small-12;
+  @extend .columns;
+}

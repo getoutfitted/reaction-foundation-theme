@@ -1,12 +1,12 @@
 .address-book {
   .list-group-item {
     cursor: pointer;
-    font-size: @font-size-small;
+    font-size: 12px;
     a {
       text-decoration: none;
-      color: @text-color;
+      color: $jet;
     }
-    a .active {color: @body-bg;}
+    a .active { color: $primary-color; }
   }
 
   .address-icons {
@@ -18,12 +18,12 @@
   }
 
   .address-options {
-    .padding-left(10px);
+    @include padding-left(10px);
     margin-top: -25px;
     padding-bottom: 15px;
     .form-group {
       height: 15px;
-      font-size: @font-size-small;
+      font-size: 12px;
     }
   }
 }

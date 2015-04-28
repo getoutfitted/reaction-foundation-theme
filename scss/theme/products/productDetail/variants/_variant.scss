@@ -1,43 +1,6 @@
 $variant-progressbar-height: 28px;
 
 // == main variant edit form
-.wire-icon-button,
-.wire-icon-button:hover,
-.wire-option-button,
-.wire-option-button:hover,
-.wire-button,
-.wire-button:hover {
-  border: 1px solid $aluminum;
-  background: $white;
-  padding: 6px 12px;
-  border: 1px solid $aluminum;
-  border-radius: $global-radius;
-  color: $charcoal;
-}
-
-.wire-option-button {
-  margin-bottom: 0;
-}
-
-.wire-icon-button:hover,
-.wire-option-button:hover,
-.wire-button:hover,
-.wire-option-button:active,
-.wire-option-button.active,
-wire-button:active {
-  background: $smoke;
-  color: $charcoal;
-}
-
-.qty-label {
-  @include label();
-  background: $monsoon;
-  color: $white;
-  font-weight: bold;
-  border-radius: 50px;
-  font-size: 12px;
-}
-
 .variant-detail {
   border-radius: $global-radius;
   font-size: 12px;

@@ -1,27 +1,27 @@
 //Thanks to Michael McQueen http://codepen.io/michaelmcqueen/pen/GdroF
 .next-stripe {
-background-size: 35px 35px;
-background-color: @cart-progress-next;
-background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .4) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%,transparent 75%, transparent);
-background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .4) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%,transparent 75%, transparent);
+  background-size: 35px 35px;
+  background-color: $cart-progress-next;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .4) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%,transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .4) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%,transparent 75%, transparent);
 }
 
 .visited-stripe {
-background-size: 35px 35px;
-background-color: @cart-progress-visited;
-background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
-background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
+  background-size: 35px 35px;
+  background-color: $cart-progress-visited;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
 }
 
 .active-stripe {
-background-size: 35px 35px;
-background-color: @cart-progress-active;
-background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
-background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
+  background-size: 35px 35px;
+  background-color: $cart-progress-active;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
 }
 
 .inner-shadow {
--webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, .2); box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, .2);
+  -webkit-box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, .2); box-shadow: inset 2px 2px 2px 0px rgba(0, 0, 0, .2);
 }
 @-webkit-keyframes checkout-progress-animation-ltr {
   from {
@@ -55,23 +55,23 @@ ul.checkout-bar {
     padding-top: 14px;
     padding-bottom: 14px;
     // .padding-left(80px);
-    .padding-right(20px);
+    @include padding-right(20px);
     position: relative;
     vertical-align: top;
     &:before {
-      .inner-shadow;
+      @extend .inner-shadow;
       background: #ddd;
       border: 2px solid #FFF;
       border-radius: 50%;
       color: #fff;
       font-size: 16px;
       font-weight: 700;
-      .left(20px);
+      @include left(20px);
       line-height: 16px;
       padding-top: 13px;
       padding-bottom: 13px;
-      .padding-left(12px);
-      .padding-right(11px);
+      @include padding-left(12px);
+      @include padding-right(11px);
       height: 35px;
       position: absolute;
       text-align: center;
@@ -81,19 +81,19 @@ ul.checkout-bar {
       z-index: 999;
     }
      &.active {
-      color: @cart-progress-active;
+      color: $cart-progress-active;
       font-weight: bold;
       &:before {
-        background: @cart-progress-active;
+        background: $cart-progress-active;
         z-index: 99999;
       }
     }
     &.visited {
-      background: @cart-progress-next;
-      color: @cart-progress-visited;
+      background: $cart-progress-next;
+      color: $cart-progress-visited;
       z-index: 99999;
       &:before {
-       background: @cart-progress-visited;
+       background: $cart-progress-visited;
         z-index: 99999;
       }
     }
@@ -135,35 +135,38 @@ ul.checkout-bar {
     text-decoration: none;
   }
 }
-@media screen and (max-width: @screen-sm-max) {
+@media #{$small-only} {
     .checkout-progress-wrap {
         display: none;
     }
 }
 
 
-@media all and (min-width: 980px) {
+@media #{$medium-up} {
   .cart-checkout-progress {
     margin-top: 20px;
   }
- .checkout-bar li.active:after {
-   -webkit-animation: checkout-progress-animation-ltr 3s 0;
-   .rtl({
-     -webkit-animation: checkout-progress-animation-rtl 3s 0;
-   });
-    .active-stripe;
-    .inner-shadow;
+  
+  .checkout-bar li.active:after {
+    -webkit-animation: checkout-progress-animation-ltr 3s 0;
+    @extend .active-stripe;
+    @extend .inner-shadow;
     content:"";
     height: 15px;
     width: 100%;
-    .left(50%);
+    @include left(50%);
     position: absolute;
     top: -50px;
     z-index: 0;
   }
+  
+  html.rtl .checkout-bar li.active:after {
+    -webkit-animation: checkout-progress-animation-rtl 3s 0;
+  };
+  
   ul.checkout-bar {
-  .inner-shadow;
-  .next-stripe;
+  @extend .inner-shadow;
+  @extend .next-stripe;
   border-radius: 15px;
   height: 15px;
   margin: 0 auto;
@@ -171,12 +174,12 @@ ul.checkout-bar {
   position: absolute;
   width: 100%;
   &:before {
-    .visited-stripe;
-    .inner-shadow;
+    @extend .visited-stripe;
+    @extend .inner-shadow;
     border-radius: 15px;
     content: " ";
     height: 15px;
-    .left(0);
+    @include left(0);
     position: absolute;
     width: 10%;
   }
@@ -188,12 +191,12 @@ ul.checkout-bar {
       width: 19%;
       &:before {
         height: 45px;
-        .left(40%);
+        @include left(40%);
         line-height: 16px;
         padding-top: 13px;
         padding-bottom: 13px;
-        .padding-left(12px);
-        .padding-right(11px);
+        @include padding-left(12px);
+        @include padding-right(11px);
         position: absolute;
         top: -65px;
         width: 45px;
@@ -202,11 +205,11 @@ ul.checkout-bar {
       &.visited {
         background: none;
         &:after {
-          .visited-stripe;
-          .inner-shadow;
+          @extend .visited-stripe;
+          @extend .inner-shadow;
           content: "";
           height: 15px;
-          .left(50%);
+          @include left(50%);
           position: absolute;
           top: -50px;
           width: 100%;
@@ -217,7 +220,7 @@ ul.checkout-bar {
   }
 }
 
-@media screen and (min-width: @screen-lg-min) {
+@media #{$large-up} {
   .cart-checkout-progress {
     max-width: 1200px;
     margin: 20px auto 0 auto;
