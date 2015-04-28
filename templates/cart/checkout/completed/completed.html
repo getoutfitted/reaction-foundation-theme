@@ -1,0 +1,33 @@
+<template name="foundationCartCompleted">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="panel completed-order-confirmation">
+        <h3><span data-i18n="cartCompleted.thankYou">Thank you!</span></h3>
+        <div id="order-status">
+          <p><span data-i18n="cartCompleted.yourOrderIsNow">Your order is now</span>&nbsp;{{orderStatus}}.</p>
+        </div>
+        <div>
+          {{#unless email}}
+          <p>
+            <div data-alert class="alert-box radius success">
+              <span data-i18n="cartCompleted.registerGuest">Hello! Add an email and receive order updates.</span>
+              <div class="input-group small-4 columns">
+                <input type="email" name="email" class="form-control" placeholder="email" id="update-order-email" aria-describedby="update-order-email">
+                <span class="input-group-addon" id="update-order" data-i18n="app.submit">Submit</span>
+              </div>
+            </div>
+          </p>
+          {{else}}
+            <span data-i18n="cartCompleted.trackYourDelivery">Order updates will be sent to</span>
+            <span>{{email}}</span>
+          {{/unless}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      {{> foundationDashboardOrdersList}}
+    </div>
+  </div>
+</template>

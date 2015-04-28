@@ -1,0 +1,12 @@
+<template name="foundationCheckoutPayment">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <i class="checkout-step-badge">5</i><span data-i18n="addPaymentToCompleteOrder">Add payment to complete order</span></h3>
+    </div>
+    <div class="panel-body">
+      {{> foundationPaymentMethods}}
+      <div id="payment-alerts">{{>foundationAlerts placement="paymentMethod"}}</div>
+    </div>
+  </div>
+</template>

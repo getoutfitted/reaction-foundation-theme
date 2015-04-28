@@ -1,0 +1,75 @@
+<template name="foundationCartCheckout">
+  {{#if cart.items}}
+    <div class="small-12 columns">
+      <div class="row cart-checkout-progress">
+        {{> foundationCheckoutProgressBar}}
+      </div>
+      <div class="row cart-checkout-steps">
+        <div class="small-12 medium-6 large-8 columns">
+          <div class="row">
+            {{#if loginStatus}}
+              <div class="small-12 columns"><i class="{{loginStatus}}">1</i>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title" data-i18n='checkoutLogin.loginCompleted'>Account completed</h3>
+                  </div>
+                </div>
+              </div>
+            {{else}}
+              <div class="small-12 columns"><i class="checkout-step-badge">1</i>{{> foundationCheckoutLogin}}</div>
+            {{/if}}
+          </div>
+
+          <div class="row">
+            {{#if addressStatus}}
+              <div class="small-12 columns"><i class="{{addressStatus}}">2</i>{{> foundationCheckoutAddressBook}}</div>
+            {{else}}
+              <div class="small-12 columns checkout-pending"><i class="checkout-step-badge">2</i></div>
+            {{/if}}
+          </div>
+
+          <div class="row">
+            {{#if shippingOptionStatus}}
+              <div class="small-12 columns"><i class="{{shippingOptionStatus}}">3</i>{{> foundationCoreCheckoutShipping}}</div>
+            {{else}}
+            <div class="small-12 columns checkout-pending"><i class="checkout-step-badge">3</i></div>
+           {{/if}}
+          </div>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns">
+          {{#if checkoutReviewStatus}}
+            <div class="small-12 columns">
+              <i class="checkout-step-badge">4</i>
+              {{> foundationCheckoutReview}}
+            </div>
+          {{else}}
+            <div class="small-12 columns checkout-pending"><i class="checkout-step-badge">4</i></div>
+          {{/if}}
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns" id="checkout-step-payment-methods">
+          {{#if checkoutReviewStatus}}
+            <div class="small-12 columns">
+              <i class="checkout-step-badge">4</i>
+              {{> foundationCheckoutPayment}}
+            </div>
+          {{else}}
+            <div class="small-12 columns checkout-pending"><i class="checkout-step-badge">5</i></div>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  {{else}}
+    {{> foundationEmptyCheckoutCart}}
+  {{/if}}
+</template>
+
+<template name="foundationEmptyCheckoutCart">
+  <h2>
+  <span data-i18n="cartCheckout.surprise">Woah!</span>&nbsp;
+  <small>
+    <span data-i18n="cartCheckout.emptyCheckoutCart">looks like your cart is empty!</span>
+  </small>
+  </h2>
+</template>
