@@ -1,0 +1,65 @@
+<template name="foundationLoginDropdown">
+  <li class="has-dropdown">
+    {{#if currentUser}}
+      <a href="#">
+        <span class="circular-icon" style="background: url({{socialImage}}) no-repeat center;"></span>
+        <span id="logged-in-display-name"> {{displayName}}<b class="caret"></b></span>
+      </a>
+      <ul class="dropdown">
+        {{> foundationUserDropdown}}
+      </ul>
+    {{else}}
+      <a href="#"><span data-i18n="accountsUI.signIn">Sign In</span><b class="caret"></b></a>
+      <ul class="dropdown accounts-dropdown">
+        <div class="accounts-dialog accounts-layout dropdown-menu">
+          {{> _foundationLoginButtonsLoggedOutAllServices}}
+        </div>
+      </ul>
+    {{/if}}
+  </li>
+</template>
+
+<template name="foundationUserDropdown">
+  <div class="user-accounts-dropdown">
+    <div class="user-accounts-dropdown-content">
+        {{> foundationAccountsDropdownApps}}
+    </div>
+    <div class="dropdown-button" id="logout" data-i18n="accountsUI.signOut">Sign Out</div>
+  </div>
+</template>
+
+<template name="foundationAccountsDropdownApps">
+  <ul class="user-accounts-dropdown-apps">
+    {{> foundationUserAccountsDropdown}}
+    {{#if hasDashboardAccess}}
+      <!--administrative shortcut icons -->
+      {{#each reactionApps provides='shortcut' enabled=true}}
+        <li class="dropdown-apps-icon">
+          <a id="{{route}}" title="{{label}}">
+            <i class="{{icon}}"></i>
+            <span class="icon-text">
+              {{label}}
+            </span>
+          </a>
+        </li>
+      {{/each}}
+      {{> foundationConsoleIcon}}
+    {{/if}}
+  </ul>
+</template>
+
+<template name="foundationUserAccountsDropdown">
+  <!--user account shortcut icons -->
+  {{#each reactionApps provides='userAccountDropdown' enabled=true}}
+    <li class="dropdown-apps-icon">
+      <a id="{{route}}" title="{{label}}">
+        <i class="{{icon}}"></i>
+        <span class="icon-text">
+          {{label}}
+        </span>
+      </a>
+    </li>
+  {{else}}
+    <span data-i18n="accountsUI.signedIn">You are signed in.</span>
+  {{/each}}
+</template>

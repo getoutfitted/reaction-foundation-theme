@@ -1,0 +1,85 @@
+<template name="_foundationLoginButtons">
+  <div id="login-buttons" class="login-buttons-dropdown-align-{{align}}">
+    {{#if currentUser}}
+      {{#if loggingIn}}
+        {{! We aren't actually logged in yet; we're just setting Meteor.userId
+            optimistically during an at-startup login-with-token. We expose this
+            state so other UIs can treat it specially, but we'll just treat it
+            as logged out. }}
+        {{#if dropdown}}
+          {{> _foundationLoginButtonsLoggingIn }}
+        {{else}}
+          <div class="login-buttons-with-only-one-button">
+            {{> _foundationLoginButtonsLoggingInSingleLoginButton }}
+          </div>
+        {{/if}}
+      {{else}}
+        {{> _foundationLoginButtonsLoggedIn}}
+      {{/if}}
+    {{else}}
+      {{> _foundationLoginButtonsLoggedOut}}
+    {{/if}}
+  </div>
+</template>
+
+<template name="_foundationLoginButtonsLoggedIn">
+  {{#if dropdown}}
+    {{> _foundationLoginButtonsLoggedInDropdown}}
+  {{else}}
+    <div class="login-buttons-with-only-one-button">
+      {{> _foundationLoginButtonsLoggedInSingleLogoutButton}}
+    </div>
+  {{/if}}
+</template>
+
+<template name="_foundationLoginButtonsLoggedOut">
+  {{#if services}} {{! if at least one service is configured }}
+    {{#if configurationLoaded}}
+      {{#if dropdown}} {{! if more than one service configured, or password is configured}}
+        {{> _foundationLoginButtonsLoggedOutDropdown}}
+      {{else}}
+        {{#with singleService}} {{! at this point there must be only one configured services }}
+          <div class="login-buttons-with-only-one-button">
+            {{#if loggingIn}}
+              {{> _foundationLoginButtonsLoggingInSingleLoginButton}}
+            {{else}}
+              {{> _foundationLoginButtonsLoggedOutSingleLoginButton}}
+            {{/if}}
+          </div>
+        {{/with}}
+      {{/if}}
+    {{/if}}
+  {{else}}
+    <div class="no-services" data-i18n="accountsUI.error.noLoginServicesConfigured">No login services configured</div>
+  {{/if}}
+</template>
+
+<!-- used in various places to display messages to user -->
+<template name="_foundationLoginButtonsMessages">
+  {{#if errorMessage}}
+    <div class="message error-message" data-i18n="accountUI.error.{{toCamelCase errorMessage}}">{{errorMessage}}</div>
+  {{/if}}
+  {{#if infoMessage}}
+    <div class="message info-message" data-i18n="accountUI.error.{{toCamelCase infoMessage}}">{{infoMessage}}</div>
+  {{/if}}
+</template>
+
+<template name="_foundationLoginButtonsLoggingIn">
+  {{> _foundationLoginButtonsLoggingInPadding}}
+  <div class="loading">&nbsp;</div>
+  {{> _foundationLoginButtonsLoggingInPadding}}
+</template>
+
+<template name="_foundationLoginButtonsLoggingInPadding">
+  {{#unless dropdown}}
+    {{! invisible div used for correct height of surrounding div. this ensures
+        that the _loginButtons template is always the same height
+        and the rest of the page doesn't move up and down }}
+    <div class="login-buttons-padding">
+      <div class="login-button single-login-button" style="visibility: hidden;" id="login-buttons-logout">&nbsp;</div>
+    </div>
+  {{else}}
+    {{! just add some padding }}
+    <div class="login-buttons-padding"></div>
+  {{/unless}}
+</template>

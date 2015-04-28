@@ -1,0 +1,34 @@
+<template name="_foundationLoginButtonsLoggedOutSingleLoginButton">
+  <div class="login-text-and-button">
+    <div class="login-button single-login-button {{#unless configured}}configure-button{{/unless}}"
+         id="login-buttons-{{name}}">
+      <div class="login-image" id="login-buttons-image-{{name}}"></div>
+      {{#if configured}}
+        <span class="text-besides-image sign-in-text-{{name}}">
+          <span data-i18n="accountsUI.signInWith">Sign in with</span>
+          <span data-i18n="social.{{name}}"> {{capitalizedName}}</span>
+        </span>
+      {{else}}
+        <span class="text-besides-image configure-text-{{name}}">
+          <span data-i18n="accountsUI.configure">Configure</span>
+          <span data-i18n="social.{{name}}"> {{capitalizedName}}</span>
+        </span>
+      {{/if}}
+    </div>
+  </div>
+</template>
+
+<template name="_foundationLoginButtonsLoggingInSingleLoginButton">
+  <div class="login-text-and-button">
+    {{> _foundationLoginButtonsLoggingIn}}
+  </div>
+</template>
+
+<template name="_foundationLoginButtonsLoggedInSingleLogoutButton">
+  <div class="login-text-and-button">
+    <div class="login-display-name">
+      {{displayName}}
+    </div>
+    <div class="login-button single-login-button" id="login-buttons-logout" data-i18n="accountsUI.signOut">Sign Out</div>
+  </div>
+</template>
