@@ -1,0 +1,24 @@
+<template name="foundationShopAccounts">
+  <h2>Access<small> Permissions</small></h2>
+  <div class="settings-account-list">
+    <table class="table staff-table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Admin Access</th>
+        <th></th>
+      </tr>
+      </thead>
+      {{#each members}}
+        {{> foundationShopMember}}
+      {{/each}}
+    </table>
+  {{#if hasOwnerAccess}}
+    <a href="#" data-reveal-id="memberForm" type="button" id="button-add-member" class="wire-button">Add a staff member</a>
+  {{/if}}
+  </div>
+  <div class="member-form reveal-modal" id="member-form" data-reveal aria-labelledby="Member Form" aria-hidden="true" role="dialog">
+    {{> foundationMemberForm}}
+  </div>
+</template>

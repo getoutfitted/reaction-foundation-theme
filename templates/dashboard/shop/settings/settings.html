@@ -1,0 +1,80 @@
+<template name="foundationShopSettings">
+  <h2>Shop <small data-18n="app.settings">Settings</small></h2>
+  <div class="small-12 medium-10 large-6 columns">
+    <ul class="tabs dashboard-tabs" data-tab>
+      <li class="tab-title active"><a href="#general">General</a></li>
+      <li class="tab-title"><a href="#address">Address</a></li>
+      <li class="tab-title"><a href="#mail">Mail</a></li>
+      <li class="tab-title"><a href="#localization">Localization</a></li>
+      <li class="tab-title"><a href="#options">Options</a></li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tabs-content dashboard-tabs">
+      <div class="content active" id="general">
+        <div class="panel">
+          {{#autoForm collection="Shops" doc=. id="shopEditForm" type="update"}}
+            {{> afQuickField name='name' placeholder="Shop Name" }}
+            {{> afQuickField name='description' placeholder="Description"}}
+            {{> afQuickField name='keywords' placeholder="Keywords"}}
+            {{> foundationShopSettingsSubmitButton}}
+          {{/autoForm}}
+        </div>
+      </div>
+      <div class="content" id="address">
+        <div class="panel">
+          {{#autoForm collection="Shops" doc=. id="shopEditAddressForm" type="update"}}
+            {{> afQuickField name='addressBook.0.company'}}
+            {{> afQuickField name='addressBook.0.fullName'}}
+            {{> afQuickField name='addressBook.0.address1'}}
+            {{> afQuickField name='addressBook.0.address2'}}
+            {{> afQuickField name='addressBook.0.city'}}
+            {{> afQuickField name='addressBook.0.region'}}
+            {{> afQuickField name='addressBook.0.postal'}}
+            {{> afQuickField name='addressBook.0.country' options=countryOptions}}
+            {{> afQuickField name='addressBook.0.phone'}}
+            {{> afQuickField name='addressBook.0.isCommercial'}}
+            {{> afQuickField name='addressBook.0.isShippingDefault' value=true}}
+            {{> afQuickField name='addressBook.0.isBillingDefault' value=true}}
+            {{> foundationShopSettingsSubmitButton}}
+          {{/autoForm}}
+        </div>
+      </div>
+      <div class="content" id="mail">
+        <div class="panel">
+          {{#autoForm collection="ReactionCore.Collections.Packages" schema="ReactionCore.Schemas.CorePackageConfig" doc=packageData id="shopEditEmailForm" type="update"}}
+            {{> afQuickField name='settings.mail.user'}}
+            {{> afQuickField name='settings.mail.password'}}
+            {{> afQuickField name='settings.mail.host'}}
+            {{> afQuickField name='settings.mail.port'}}
+            {{> foundationShopSettingsSubmitButton}}
+          {{/autoForm}}
+        </div>
+      </div>
+      <div class="content" id="localization">
+        <div class="panel">
+          {{#autoForm collection="Shops" doc=. id="shopEditSettingsForm" type="update"}}
+            {{> afQuickField name='timezone' options=timezoneOptions}}
+            {{> afQuickField name='currency' options=currencyOptions}}
+            {{> afQuickField name='baseUOM' options=uomOptions}}
+            {{> foundationShopSettingsSubmitButton}}
+          {{/autoForm}}
+        </div>
+      </div>
+      <div class="content" id="options">
+        <div class="panel">
+          {{#autoForm collection="ReactionCore.Collections.Packages" schema="ReactionCore.Schemas.CorePackageConfig" doc=packageData id="shopEditOptionsForm" type="update"}}
+            {{> afFieldInput name='settings.public.allowGuestCheckout'}}
+            {{> foundationShopSettingsSubmitButton}}
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="foundationShopSettingsSubmitButton">
+  <div class="clearfix">
+    <button type="submit" class="wire-button pull-right">Submit</button>
+  </div>
+</template>

@@ -1,0 +1,25 @@
+<template name="foundationOrdersListItems">
+  {{#each items}}
+    <div class="row order-list-items">
+      <div class="small-3 medium-2 large-1 columns">
+        <div class="thumbnail order-item-img">
+          {{#with media}}
+            <img src="{{url store='thumbnail'}}">
+          {{else}}
+            <img src= "/resources/placeholder.gif">
+          {{/with}}
+        </div>
+      </div>
+      <div class="small-9 medium-10 large-11 columns order-list-item-details">
+        <span class="completed-order-item-price">
+          <i class="label qty-label">{{quantity}}</i>
+        </span>
+        <span class="completed-order-item-title">
+          <span>{{variants.title}}</span>
+          <span>@</span>
+          <span>{{formatPrice variants.price}}</span>
+        </span>
+      </div>
+    </div>
+  {{/each}}
+</template>

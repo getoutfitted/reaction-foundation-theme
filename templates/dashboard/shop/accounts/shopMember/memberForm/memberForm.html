@@ -1,0 +1,25 @@
+<template name="foundationMemberForm">
+  <h4 id="memberFormTitle">Add A Staff Member</h4>
+  <form role="form" novalidate="novalidate">
+    <div class="row">
+      <div class="error-block">{{> foundationAlerts}}</div>
+      <div class="form-group">
+        <label for="member-name" class="small-3 columns control-label">Name</label>
+        <div class="small-9">
+          <input id="member-name" class="form-control" type="text" name="name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="member-email" class="small-3 columns control-label">Email Address</label>
+        <div class="small-9">
+          <input id="member-email" class="form-control" type="text" name="email" />
+        </div>
+      </div>
+      <div>
+        <button type="button" id="button-member-add-cancel" class="wire-button">Cancel</button>
+        <button type="submit" class="wire-button">Send Invite</button>
+      </div>
+    </div>
+  </form>
+  <a class="close-reveal-modal" aria-label="close">&#215;</a>
+</template>

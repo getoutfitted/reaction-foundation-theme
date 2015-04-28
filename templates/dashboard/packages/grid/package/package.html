@@ -1,0 +1,32 @@
+<template name="foundationGridPackage">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="pkg-card {{pkgTypeClass.class}}" data-ribbon="{{pkgTypeClass.text}}">
+        {{!-- display overview route --}}
+        <a class="pkg-app-card">
+          <div class="pkg-content">
+            <h3>{{label}}</h3>
+            <span>{{{description}}}</span>
+          </div>
+        </a>
+        <div class="pkg-status">
+            <i class="{{icon}} fa-3x pull-left"></i>
+             <div class="pkg-controls">
+                {{#if enabled}}
+                  {{#if condition name 'neq' 'core'}}
+                    <a class="pull-right disablePkg"> <i class="fa fa-check-square fa-2x fa-fw"></i></a>
+                  {{/if}}
+                  {{#each reactionApps provides="settings" name=name container=container}}
+                    {{#if hasShopPermission route}}
+                    <a class="pkg-settings" title="{{i18n 'app.settings' 'Settings'}}"><i class="{{orElse icon 'fa fa-cog fa-2x fa-fw'}}"></i></a>
+                    {{/if}}
+                  {{/each}}
+                {{else}}
+                  <a class="pull-right enablePkg" title="{{i18n 'app.toggle' 'Toggle'}}"> <i class="fa fa-plus-square fa-2x fa-fw"></i></a>
+                {{/if}}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

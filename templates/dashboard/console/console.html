@@ -1,0 +1,43 @@
+<template name="foundationConsoleNavBar">
+  <div class="dashboard-navbar-packages">
+    <div class="small-12 medium-10 large-9 columns">
+      <ul class="inline-list console-list">
+        {{#each reactionApps provides='console'}}
+          <li class="{{active route}}">
+            <a class="dashboard-navbar-package" data-package="{{name}}" title="{{name}}">
+              {{label}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="small-12 medium-2 large-3 columns">
+      <div class="dashboard-drawer-controls pull-right">
+        <!-- Dashboard drawer (widgets)-->
+        <button type="button" class="no-border-icon-button" id="dashboard-drawer-close-button">
+         <span aria-hidden="true" title="{{i18n 'app.toggle'}}">
+             <i class="fa
+             {{#if displayConsoleDrawer}}
+                 fa-angle-double-up
+             {{else}}
+                 fa-angle-double-down
+             {{/if}}
+              fa-lg"></i>
+         </span>
+          <span class="show-for-sr hide">Toggle Console</span>
+        </button>
+        <!-- Dashboard close button -->
+        <button type="button" class="no-border-icon-button" id="dashboard-navbar-close-button">
+          <span aria-hidden="true" title="{{i18n 'app.close'}}"><i class="fa fa-times fa-lg"></i></span>
+          <span class="show-for-sr hide">Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="foundationConsoleWidgets">
+
+  {{> Template.dynamic template=template}}
+
+</template>

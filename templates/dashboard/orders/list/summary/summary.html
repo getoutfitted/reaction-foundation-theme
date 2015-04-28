@@ -1,0 +1,66 @@
+<template name="foundationOrdersListSummary">
+  <div class="row completed-order-summary">
+    <div class="small-8 columns">
+      <span class="small">Reference:</span>
+      <span class="small">{{_id}}</span>
+    </div>
+    <div class="small-4 columns">
+      {{#with invoice }}
+        <div class="cart-items">
+          <div class="cart-totals">
+            <div class="row">
+              <div class="small-7 columns text-right">
+                <span data-i18n='cartSubTotals.subtotal'>Sub total</span>
+              </div>
+              <div class="small-4 small-offset-1 columns">
+                {{formatPrice subtotal}}
+              </div>
+            </div>
+
+            {{#if condition shipping 'gt' 0}}
+            <div class="row">
+              <div class="small-7 columns text-right">
+                <span data-i18n='cartSubTotals.shipping'>Shipping</span>
+              </div>
+              <div class="small-4 small-offset-1 columns">
+                {{formatPrice shipping}}
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if condition tax 'gt' 0}}
+            <div class="row">
+              <div class="small-7 columns text-right">
+                <span data-i18n='cartSubTotals.tax'>Tax</span>
+              </div>
+              <div class="small-4 small-offset-1 columns">
+                {{formatPrice taxes}}
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if condition discounts 'gt' 0}}
+            <div class="row">
+              <div class="small-7 columns text-right">
+                <span data-i18n='cartSubTotals.discount'>Discount</span>
+              </div>
+              <div class="small-4 small-offset-1 columns">
+                {{formatPrice discounts}}
+              </div>
+            </div>
+            {{/if}}
+
+            <div class="row">
+              <div class="small-7 columns text-right">
+                <span data-i18n='cartSubTotals.total'>Total</span>
+              </div>
+              <div class="small-4 small-offset-1 columns">
+                {{formatPrice total}}
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/with}}
+    </div>
+  </div>
+</template>

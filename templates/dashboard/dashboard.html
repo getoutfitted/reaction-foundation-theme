@@ -1,0 +1,18 @@
+<template name="foundationDashboard">
+  {{#if hasDashboardAccess}}
+    {{#if displayConsoleNavBar}}
+      <div class="dashboard-drawer">
+      {{#if displayConsoleDrawer}}
+        <div class="dashboard-container">
+          <div class="dashboard-widget-wrapper">
+            {{#each reactionApps provides='widget' route=route}}
+              {{> foundationConsoleWidgets}}
+            {{/each}}
+          </div>
+        </div>
+      {{/if}}
+      </div>
+      {{> foundationConsoleNavBar}}
+    {{/if}}
+  {{/if}}
+</template>

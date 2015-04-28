@@ -1,0 +1,58 @@
+<template name="foundationOrderDetail">
+  <li class="list-group-item order-detail">
+    <div class="row order-profile">
+      <div class="small-12 columns">
+        {{#with userProfile.profile}}
+          {{#if picture}}
+          <span class="circular-icon" style="background: url({{picture}}) no-repeat center;"></span>
+          {{/if}}
+          <strong>{{name}}</strong>
+        {{/with}}
+        <p>placed {{orderAge}} on {{dateFormat createdAt format="MMM D"}}</p>
+      </div>
+    </div>
+    <div class="row order-shipping-address">
+      <div class="small-12 columns">
+        <div class="panel">
+          {{#with shipping.address}}
+          <address>
+            <strong>{{fullName}}</strong><br>
+            {{address1}}<br>
+            {{address2}}{{#if address2}}<br>{{/if}}
+            {{city}}, {{region}}, {{country}} {{postal}}<br>
+            <abbr title="Phone">P:</abbr> {{phone}}
+          </address>
+          {{/with}}
+          {{#if shipmentTracking}}
+            <p>Tracking: <a href="#">{{shipmentTracking}}</a></p>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+    <div class="row order-items">
+      <div class="small-12 columns">
+        <ul class="list-group">
+          {{#each items}}
+          <li class="list-group-item" data-id="{{variants._id}}">
+            {{#with variants}}
+             <span class="badge badge-{{badge}}">{{../quantity}}</span>
+             {{title}}
+            {{/with}}
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="row order-state-helpers">
+      <div class="small-12 columns">
+        {{>orderStateHelper}}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="small-12 columns">
+        <a href="/dashboard/orders/{{_id}}"><button class="btn btn-primary pull-right">View More</button></a>
+      </div>
+    </div>
+  </li>
+</template>
