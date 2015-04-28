@@ -1,4 +1,5 @@
 #
+
 Router.onAfterAction ->
   $(document).foundation()
 

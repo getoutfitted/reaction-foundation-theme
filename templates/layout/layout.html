@@ -9,7 +9,7 @@
 
 <template name="foundationLayout">
   <section class="header-block">
-    {{> yield region="foundationLayoutHeader"}}
+    {{> yield region="layoutHeader"}}
   </section>
   <nav class="reaction-cart-drawer">{{>foundationCartDrawer}}</nav>
   <div class="reaction-dashboard-drawer">{{> yield region="foundationDashboard"}}</div>
@@ -21,5 +21,5 @@
       </div>
     </div>
   </main>
-  <footer class="reaction-navigation-footer" id="footer">{{>yield region="foundationLayoutFooter"}}</footer>
+  <footer class="reaction-navigation-footer test-foundation-class" id="footer">{{>yield region="layoutFooter"}}</footer>
 </template>
