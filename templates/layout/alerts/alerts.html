@@ -1,0 +1,19 @@
+<template name="foundationAlerts">
+  {{#each alerts placement}}
+    {{> foundationAlert}}
+  {{/each}}
+</template>
+
+
+<template name="foundationAlert">
+  <div data-alert class="alert-box radius {{mode}} {{#if isFirstRender}}hide{{/if}} {{options.classes}}">
+    {{#if options.dismissable}}
+      <button href="#" tabindex="0" class="close" aria-label="Close Alert">&times;</button>
+    {{/if}}
+    {{#unless options.html}}
+        {{message}}
+    {{else}}
+        {{{message}}}
+    {{/unless}}
+  </div>
+</template>

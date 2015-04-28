@@ -1,0 +1,59 @@
+<template name="foundationHeaderTags">
+  {{>foundationTagsComponent tags=tags}}
+</template>
+
+<template name="foundationHeaderLinks">
+  <dl class="sub-nav tag-nav">
+    <dt>Tags:</dt>
+    {{#each ./tags}}
+      <dd class="{{activeTag}}">
+        <a
+        href="{{pathForSEO 'product/tag' 'slug'}}"
+        class="header-tag"
+        id="tag-{{_id}}"
+        data-tag-id="{{_id}}"
+        data-event-category="tag"
+        data-event-action="tag-click"
+        data-event-label="navigation tag click"
+        data-event-value="{{name}}">{{name}}</a>
+      </dd>
+    {{/each}}
+    {{#if userHasRole "admin"}}
+      <dd>
+        <a href="#"
+          id="header-edit-tag"
+          class="header-edit-tag"
+          data-current-id="{{tag._id}}"><i class="fa fa-tags fa-lg"></i></a>
+      </dd>
+    {{/if}}
+  </dl>
+</template>
+
+
+<template name="foundationTagInputForm">
+  <dl class="sub-nav tag-edit-list" id="tag-edit-list">
+    <dt>Edit Tags: </dt>
+    {{#each ./tags}}
+    <dd data-tag-id="{{_id}}">
+      <div class="tag-input-group">
+        <span class="tag-input-group-handle">
+          <i class="fa fa-bars fa-lg"></i>
+        </span>
+        <span class="tag-input">
+          <input type="text" class="tags-input-select" value="{{name}}" placeholder="Edit tags" />
+        </span>
+        <span class="tag-input-group-remove">
+          <i class="fa fa-times-circle fa-lg"></i>
+        </span>
+      </div>
+    </dd>
+    {{/each}}
+    <dd data-tag-id="{{_id}}">
+      <div class="tag-input-group">
+        <span class="tag-input">
+          <input type="text" class="tags-input-select tags-submit-new" value="{{name}}" placeholder="{{i18n 'header.tagsAdd' 'Add tag'}}" autofocus/>
+        </span>
+      </div>
+    </dd>
+  </dl>
+</template>

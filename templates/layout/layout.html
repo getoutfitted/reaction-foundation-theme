@@ -1,0 +1,25 @@
+<template name="foundationHead">
+  <head>
+    <title>{{metaData.name}} | {{metaData.title}}</title>
+    {{#each metaData.meta}}
+      <meta name="{{name}}" content="{{content}}">
+    {{/each}}
+  </head>
+</template>
+
+<template name="foundationLayout">
+  <section class="header-block">
+    {{> yield region="foundationLayoutHeader"}}
+  </section>
+  <nav class="reaction-cart-drawer">{{>foundationCartDrawer}}</nav>
+  <div class="reaction-dashboard-drawer">{{> yield region="foundationDashboard"}}</div>
+  <main role="main" id="main">
+    <div class="row full-width main-container">
+      <div class="small-12 large-11 end columns">
+        <span id="layout-alerts">{{>foundationAlerts}}</span>
+        {{> yield}}
+      </div>
+    </div>
+  </main>
+  <footer class="reaction-navigation-footer" id="footer">{{>yield region="foundationLayoutFooter"}}</footer>
+</template>

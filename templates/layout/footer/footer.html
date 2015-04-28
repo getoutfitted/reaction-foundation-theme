@@ -1,0 +1,42 @@
+<template name="foundationLayoutFooter">
+  <nav class="navbar-bottom" role="navigation">
+    <div class="row">
+      <div class="small-3 columns">
+        <ul class="side-nav" role="navigation" title="Footer Navigation">
+          <li role="menuitem">
+            <a href="{{pathFor 'about'}}" data-event-category="link" data-event-action="link-click" data-event-label="page link click" data-event-value="{{pathFor 'about'}}">About</a>
+          </li>
+          <li role="menuitem">
+            <a href="{{pathFor 'team'}}" data-event-category="link" data-event-action="link-click" data-event-label="page link click" data-event-value="{{pathFor 'team'}}">Team</a>
+          </li>
+          <li role="menuitem">
+            <a href="http://meteor.com" target="_blank" data-event-category="link" data-event-action="link-click" data-event-label="external link click" data-event-value="meteor.com">
+              Made with Meteor
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="small-3 columns">
+        <ul class="side-nav" role="navigation" title="Footer Navigation Column 2">
+          <li role="menuitem">
+            <a href="{{pathFor 'terms'}}" data-event-category="link" data-event-action="link-click" data-event-label="page link click" data-event-value="{{pathFor 'terms'}}">Terms</a>
+          </li>
+          <li role="menuitem">
+            <a href="{{pathFor 'privacy'}}" data-event-category="link" data-event-action="link-click" data-event-label="page link click" data-event-value="{{pathFor 'privacy'}}">Privacy</a>
+          </li>
+          <li role="menuitem">
+            <a href="{{pathFor 'faqs'}}" data-event-category="link" data-event-action="link-click" data-event-label="page link click" data-event-value="{{pathFor 'faqs'}}">Faqs</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="small-6 columns">
+      <ul class="inline-list">
+        {{#each reactionApps provides="social" name="reaction-social"}}
+          {{> Template.dynamic template=template data=customSocialSettings }}
+        {{/each}}
+      </ul>
+      </div>
+    </div>
+  </nav>
+</template>

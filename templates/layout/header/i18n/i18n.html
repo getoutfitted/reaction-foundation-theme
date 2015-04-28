@@ -1,0 +1,14 @@
+<template name='foundationI18nChooser'>
+  <li class="i18n-chooser has-dropdown">
+    <a href="#">
+      <i class="fa fa-language fa-lg"></i> <span class="caret"></span>
+    </a>
+    <ul class="dropdown">
+      <li role="presentation" class="dropdown-header" data-i18n="languages.select">Select Language</li>
+      <li class="divider"></li>
+      {{#each languages}}
+       <li class="{{active}}"><a role="menuitem" class="i18n-language" data-i18n="{{translation}}">{{label}}</a></li>
+      {{/each}}
+    </ul>
+  </li>
+</template>
