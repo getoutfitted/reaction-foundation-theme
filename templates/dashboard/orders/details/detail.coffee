@@ -14,10 +14,10 @@ Template.foundationOrderDetail.helpers
 
   orderStateHelper: () ->
     switch @.state
-      when 'orderCreated' then Template.foundationStateHelperTracking
-      when 'shipmentTracking' then Template.foundationSpinner
-      when 'shipmentPrepare' then Template.foundationStateHelperDocuments
-      when 'shipmentPacking' then Template.foundationStateHelperPacking
-      when 'processPayment' then Template.foundationStateHelperPayment
-      when 'shipmentShipped' then Template.foundationStateHelperShipped
-      when 'orderCompleted' then Template.foundationStateHelperCompleted
+      when 'orderCreated' then Template.stateHelperTracking
+      when 'shipmentTracking' then Template.spinner
+      when 'shipmentPrepare' then Template.stateHelperDocuments
+      when 'shipmentPacking' then Template.stateHelperPacking
+      when 'processPayment' then Template.stateHelperPayment
+      when 'shipmentShipped' then Template.stateHelperShipped
+      when 'orderCompleted' then Template.stateHelperCompleted

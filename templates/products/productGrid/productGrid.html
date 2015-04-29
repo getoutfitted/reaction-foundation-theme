@@ -2,7 +2,7 @@
   <div class="product-grid" data-event-category="grid" data-event-action="generic-click" data-event-label="product grid click">
     <ul class="product-grid-list small-block-grid-2 medium-block-grid-3 large-block-grid-4" id="product-grid-list">
     {{#each products}}
-      {{> foundationProductGridItems}}
+      {{> productGridItems}}
     {{/each}}
     </ul>
   </div>
@@ -10,7 +10,7 @@
 
 <template name="foundationProductGridItems">
   <li class="product-grid-item" data-id="{{_id}}" id="{{_id}}">
-    {{> foundationGridNotice}}
+    {{> gridNotice}}
     <div class="product-grid-item-images">
       <a href="{{pathForSEO 'product' 'handle'}}" data-event-category="grid" data-event-action="product-click" data-event-label="grid product click" data-event-value="{{_id}}">
         {{#with media}}
@@ -21,8 +21,8 @@
       </a>
 
     </div>
-    {{> foundationGridControls}}
-    {{> foundationGridContent}}
+    {{> gridControls}}
+    {{> gridContent}}
   </li>
 </template>
 

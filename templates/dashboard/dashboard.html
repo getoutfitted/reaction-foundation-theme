@@ -6,13 +6,13 @@
         <div class="dashboard-container">
           <div class="dashboard-widget-wrapper">
             {{#each reactionApps provides='widget' route=route}}
-              {{> foundationConsoleWidgets}}
+              {{> consoleWidgets}}
             {{/each}}
           </div>
         </div>
       {{/if}}
       </div>
-      {{> foundationConsoleNavBar}}
+      {{> consoleNavBar}}
     {{/if}}
   {{/if}}
 </template>

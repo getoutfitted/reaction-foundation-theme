@@ -11,7 +11,7 @@
       </tr>
       </thead>
       {{#each members}}
-        {{> foundationShopMember}}
+        {{> shopMember}}
       {{/each}}
     </table>
   {{#if hasOwnerAccess}}
@@ -19,6 +19,6 @@
   {{/if}}
   </div>
   <div class="member-form reveal-modal" id="member-form" data-reveal aria-labelledby="Member Form" aria-hidden="true" role="dialog">
-    {{> foundationMemberForm}}
+    {{> memberForm}}
   </div>
 </template>

@@ -17,7 +17,7 @@
             {{> afQuickField name='name' placeholder="Shop Name" }}
             {{> afQuickField name='description' placeholder="Description"}}
             {{> afQuickField name='keywords' placeholder="Keywords"}}
-            {{> foundationShopSettingsSubmitButton}}
+            {{> shopSettingsSubmitButton}}
           {{/autoForm}}
         </div>
       </div>
@@ -36,7 +36,7 @@
             {{> afQuickField name='addressBook.0.isCommercial'}}
             {{> afQuickField name='addressBook.0.isShippingDefault' value=true}}
             {{> afQuickField name='addressBook.0.isBillingDefault' value=true}}
-            {{> foundationShopSettingsSubmitButton}}
+            {{> shopSettingsSubmitButton}}
           {{/autoForm}}
         </div>
       </div>
@@ -47,7 +47,7 @@
             {{> afQuickField name='settings.mail.password'}}
             {{> afQuickField name='settings.mail.host'}}
             {{> afQuickField name='settings.mail.port'}}
-            {{> foundationShopSettingsSubmitButton}}
+            {{> shopSettingsSubmitButton}}
           {{/autoForm}}
         </div>
       </div>
@@ -57,7 +57,7 @@
             {{> afQuickField name='timezone' options=timezoneOptions}}
             {{> afQuickField name='currency' options=currencyOptions}}
             {{> afQuickField name='baseUOM' options=uomOptions}}
-            {{> foundationShopSettingsSubmitButton}}
+            {{> shopSettingsSubmitButton}}
           {{/autoForm}}
         </div>
       </div>
@@ -65,7 +65,7 @@
         <div class="panel">
           {{#autoForm collection="ReactionCore.Collections.Packages" schema="ReactionCore.Schemas.CorePackageConfig" doc=packageData id="shopEditOptionsForm" type="update"}}
             {{> afFieldInput name='settings.public.allowGuestCheckout'}}
-            {{> foundationShopSettingsSubmitButton}}
+            {{> shopSettingsSubmitButton}}
           {{/autoForm}}
         </div>
       </div>

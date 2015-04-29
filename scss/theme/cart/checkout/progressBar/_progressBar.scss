@@ -136,9 +136,9 @@ ul.checkout-bar {
   }
 }
 @media #{$small-only} {
-    .checkout-progress-wrap {
-        display: none;
-    }
+  .checkout-progress-wrap {
+      display: none;
+  }
 }
 
 
@@ -223,6 +223,6 @@ ul.checkout-bar {
 @media #{$large-up} {
   .cart-checkout-progress {
     max-width: 1200px;
-    margin: 20px auto 0 auto;
+    margin: 40px auto 0 auto;
   }
 }

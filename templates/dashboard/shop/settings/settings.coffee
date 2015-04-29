@@ -1,7 +1,7 @@
 # Example of how to run a foundation reflow after rendering a template
-Template.foundationShopSettings.rendered = ->
+Template.shopSettings.rendered = ->
   $(document).foundation('tab', 'reflow')
-  return;
+  console.log(this)
 
 Template.foundationShopSettings.helpers
   packageData: ->

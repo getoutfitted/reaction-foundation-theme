@@ -11,7 +11,7 @@
   <div class="panel-body">
     {{#autoForm schema="ReactionCore.Schemas.Address" id="addressBookAddForm" doc=thisAddress type="normal"}}
       <fieldset>
-          {{> foundationAddressBookForm}}
+          {{> addressBookForm}}
           <div class="row text-right">
             <button type="submit" class="button primary small radius" data-i18n="app.saveAndContinue">Save and continue</button>
             {{#if profile.addressBook}}

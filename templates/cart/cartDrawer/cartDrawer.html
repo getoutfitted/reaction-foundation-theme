@@ -1,6 +1,6 @@
 <template name="foundationCartDrawer">
   <div id="cart-drawer-container" class="test-foundation-cart-drawer">
-    {{> foundationDisplayCartDrawer}}
+    {{> displayCartDrawer}}
   </div>
 </template>
 
@@ -28,11 +28,11 @@
     <div class="cart-drawer-swiper-container">
       <div class="cart-drawer-swiper-wrapper">
         <div class="cart-drawer-swiper-slide">
-          {{> foundationCartSubTotals}}
+          {{> cartSubTotals}}
         </div>
         {{#each cartItems}}
         <div class="cart-drawer-swiper-slide">
-          {{> foundationCartDrawerItems}}
+          {{> cartDrawerItems}}
         </div>
         {{/each}}
       </div>

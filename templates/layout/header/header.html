@@ -1,19 +1,19 @@
 <template name="foundationLayoutHeader">
   <nav class="top-bar reaction-navigation-header" data-topbar role="navigation" data-options="is_hover: false">
     <ul class="title-area">
-      <li class="name">{{> foundationHeaderBrand}}</li>
+      <li class="name">{{> headerBrand}}</li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
     <section class="top-bar-section">
       <ul class="right">
-        {{> foundationI18nChooser}}
+        {{> i18nChooser}}
         {{> accounts tpl="foundationLoginDropdown"}}
-        {{> foundationCartIcon}}
-        <div class="cart-alert">{{> foundationCartPanel}}</div>
+        {{> cartIcon}}
+        <div class="cart-alert">{{> cartPanel}}</div>
       </ul>
     </section>
   </nav>
   <div class="navbar-primary-tags">
-    <div class="navbar-tags">{{> foundationHeaderTags}}</div>
+    <div class="navbar-tags">{{> headerTags}}</div>
   </div>
 </template>

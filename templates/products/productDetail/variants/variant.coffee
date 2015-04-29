@@ -1,4 +1,4 @@
-Template.foundationVariant.helpers
+Template.variant.helpers
   progressBar: () ->
     if @.inventoryPercentage <= 10 then "danger"
     else if @.inventoryPercentage <= 30 then "warning"

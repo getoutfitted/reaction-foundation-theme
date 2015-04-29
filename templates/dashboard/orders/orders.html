@@ -1,6 +1,6 @@
 <template name="foundationOrders">
   {{#if isOrder}}
-    {{> foundationOrderPage}}
+    {{> orderPage}}
   {{else}}
     {{#with orders}}
       <div class="orders-grid">
@@ -18,7 +18,7 @@
                 <ul class="list-group orders-list">
                   {{#each ..}}
                     {{#if condition state "eq" ../value}}
-                      {{> foundationOrderDetail}}
+                      {{> orderDetail}}
                     {{/if}}
                   {{/each}}
                 </ul>

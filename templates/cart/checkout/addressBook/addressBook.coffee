@@ -9,16 +9,16 @@ Template.foundationCheckoutAddressBook.helpers
     account = ReactionCore.Collections.Accounts.findOne()
     return account
 
-  foundationAddressBookView: ->
-    return Session.get "foundationAddressBookView"
+  addressBookView: ->
+    return Session.get "addressBookView"
 
 Template.foundationCheckoutAddressBook.events
   'click .address-edit-icon': (event,template) ->
     addressBookEditId.set(@._id)
-    Session.set "foundationAddressBookView", "foundationAddressBookEdit"
+    Session.set "addressBookView", "addressBookEdit"
 
   'click #newAddress': () ->
-    if Session.equals "foundationAddressBookView", "foundationAddressBookAdd"
-      Session.set "foundationAddressBookView", "foundationAddressBookGrid"
+    if Session.equals "addressBookView", "addressBookAdd"
+      Session.set "addressBookView", "addressBookGrid"
     else
-      Session.set "foundationAddressBookView", "foundationAddressBookAdd"
+      Session.set "addressBookView", "addressBookAdd"

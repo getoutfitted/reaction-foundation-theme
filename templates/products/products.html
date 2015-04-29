@@ -1,12 +1,12 @@
 <template name="foundationProducts">
-  {{> foundationProductGrid}}
+  {{> productGrid}}
 </template>
 
 <template name="foundationProductListGrid">
   <div class="row">
-    {{> foundationProductGrid}}
+    {{> productGrid}}
     {{#if userHasRole "admin"}}
-      {{> foundationProductList}}
+      {{> productList}}
     {{/if}}
   </div>
 </template>

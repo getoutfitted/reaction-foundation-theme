@@ -7,27 +7,27 @@
             state so other UIs can treat it specially, but we'll just treat it
             as logged out. }}
         {{#if dropdown}}
-          {{> _foundationLoginButtonsLoggingIn }}
+          {{> _loginButtonsLoggingIn }}
         {{else}}
           <div class="login-buttons-with-only-one-button">
-            {{> _foundationLoginButtonsLoggingInSingleLoginButton }}
+            {{> _loginButtonsLoggingInSingleLoginButton }}
           </div>
         {{/if}}
       {{else}}
-        {{> _foundationLoginButtonsLoggedIn}}
+        {{> _loginButtonsLoggedIn}}
       {{/if}}
     {{else}}
-      {{> _foundationLoginButtonsLoggedOut}}
+      {{> _loginButtonsLoggedOut}}
     {{/if}}
   </div>
 </template>
 
 <template name="_foundationLoginButtonsLoggedIn">
   {{#if dropdown}}
-    {{> _foundationLoginButtonsLoggedInDropdown}}
+    {{> _loginButtonsLoggedInDropdown}}
   {{else}}
     <div class="login-buttons-with-only-one-button">
-      {{> _foundationLoginButtonsLoggedInSingleLogoutButton}}
+      {{> _loginButtonsLoggedInSingleLogoutButton}}
     </div>
   {{/if}}
 </template>
@@ -36,14 +36,14 @@
   {{#if services}} {{! if at least one service is configured }}
     {{#if configurationLoaded}}
       {{#if dropdown}} {{! if more than one service configured, or password is configured}}
-        {{> _foundationLoginButtonsLoggedOutDropdown}}
+        {{> _loginButtonsLoggedOutDropdown}}
       {{else}}
         {{#with singleService}} {{! at this point there must be only one configured services }}
           <div class="login-buttons-with-only-one-button">
             {{#if loggingIn}}
-              {{> _foundationLoginButtonsLoggingInSingleLoginButton}}
+              {{> _loginButtonsLoggingInSingleLoginButton}}
             {{else}}
-              {{> _foundationLoginButtonsLoggedOutSingleLoginButton}}
+              {{> _loginButtonsLoggedOutSingleLoginButton}}
             {{/if}}
           </div>
         {{/with}}
@@ -65,9 +65,9 @@
 </template>
 
 <template name="_foundationLoginButtonsLoggingIn">
-  {{> _foundationLoginButtonsLoggingInPadding}}
+  {{> _loginButtonsLoggingInPadding}}
   <div class="loading">&nbsp;</div>
-  {{> _foundationLoginButtonsLoggingInPadding}}
+  {{> _loginButtonsLoggingInPadding}}
 </template>
 
 <template name="_foundationLoginButtonsLoggingInPadding">

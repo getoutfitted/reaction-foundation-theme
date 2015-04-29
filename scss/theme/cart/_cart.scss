@@ -1,0 +1,9 @@
+.cart-alert-checkout .button.large {
+  @extend .large;
+  height: auto;
+}
+
+.cart-alert-checkout .button {
+  @extend .button;
+  height: auto;
+}

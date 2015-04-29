@@ -25,15 +25,15 @@ Template.foundationProductDetail.helpers
 
   fieldComponent: (field) ->
     if ReactionCore.hasOwnerAccess()
-      return Template.foundationProductDetailEdit
+      return Template.productDetailEdit
     else
-      return Template.foundationProductDetailField
+      return Template.productDetailField
 
   metaComponent: () ->
     if ReactionCore.hasOwnerAccess()
-      return Template.foundationProductMetaFieldForm
+      return Template.productMetaFieldForm
     else
-      return Template.foundationProductMetaField
+      return Template.productMetaField
 
 
 Template.foundationProductDetail.events
@@ -84,12 +84,12 @@ Template.foundationProductDetail.events
       unless currentVariant.parentId?
         options = (variant for variant in currentProduct.variants when variant.parentId is currentVariant._id)
         if options.length > 0
-          Alerts.add "Please choose options before adding to cart", "danger", placement:"productDetail", i18n_key:"productDetail.chooseOptions", autoHide: 10000
+          Alerts.add "Please choose options before adding to cart", "alert", placement:"productDetail", i18n_key:"productDetail.chooseOptions", autoHide: 10000
           return
 
       # If variant has inv policy and is out of stock, show warning and deny add to cart
       if (currentVariant.inventoryPolicy and currentVariant.inventoryQuantity < 1)
-        Alerts.add "Sorry, this item is out of stock!", "danger", placement: "productDetail", i18n_key: "productDetail.outOfStock", autoHide: 10000
+        Alerts.add "Sorry, this item is out of stock!", "alert", placement: "productDetail", i18n_key: "productDetail.outOfStock", autoHide: 10000
         return
 
       # Get a reference to the quantity field
@@ -100,7 +100,7 @@ Template.foundationProductDetail.events
       quantity = 1 if quantity < 1
 
       unless @.isVisible
-        Alerts.add "Publish product before adding to cart.", "danger", placement:"productDetail", i18n_key: "productDetail.publishFirst", autoHide: 10000
+        Alerts.add "Publish product before adding to cart.", "alert", placement:"productDetail", i18n_key: "productDetail.publishFirst", autoHide: 10000
         return
       else
         # Add to cart
@@ -126,7 +126,7 @@ Template.foundationProductDetail.events
         })
 
     else
-      Alerts.add "Select an option before adding to cart", "danger", placement:"productDetail", i18n_key: "productDetail.selectOption", autoHide: 8000
+      Alerts.add "Select an option before adding to cart", "alert", placement:"productDetail", i18n_key: "productDetail.selectOption", autoHide: 8000
       return
 
   "click .toggle-product-isVisible-link": (event, template) ->
@@ -141,7 +141,7 @@ Template.foundationProductDetail.events
         errorMsg += "Variant " + (index + 1) + " price is required. "
 
     if errorMsg.length
-      Alerts.add errorMsg, "danger", placement: "productManagement", i18n_key: "productDetail.errorMsg"
+      Alerts.add errorMsg, "alert", placement: "productManagement", i18n_key: "productDetail.errorMsg"
     else
       Products.update(template.data._id, {$set: {isVisible: !template.data.isVisible}})
     return

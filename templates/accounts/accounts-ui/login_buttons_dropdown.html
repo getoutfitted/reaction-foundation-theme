@@ -13,12 +13,12 @@
         <div class="login-close-text-clear"></div>
 
         {{#if inMessageOnlyFlow}}
-          {{> _foundationLoginButtonsMessages}}
+          {{> _loginButtonsMessages}}
         {{else}}
           {{#if inChangePasswordFlow}}
-            {{> _foundationLoginButtonsChangePassword}}
+            {{> _loginButtonsChangePassword}}
           {{else}}
-            {{> _foundationLoginButtonsLoggedInDropdownActions}}
+            {{> _loginButtonsLoggedInDropdownActions}}
           {{/if}}
         {{/if}}
       </div>
@@ -37,7 +37,7 @@
     Sign out
   </div>
 
-  {{> _foundationLoginButtonsMessages}}
+  {{> _loginButtonsMessages}}
 </template>
 
 <!--            -->
@@ -52,15 +52,15 @@
       <div id="login-dropdown-list" class="accounts-dialog">
         <a class="login-close-text" data-i18n="app.close">Close</a>
         {{#if loggingIn}}
-          {{> _foundationLoginButtonsLoggingIn}}
+          {{> _loginButtonsLoggingIn}}
         {{/if}}
         <div class="login-close-text-clear"></div>
-        {{> _foundationLoginButtonsLoggedOutAllServices}}
+        {{> _loginButtonsLoggedOutAllServices}}
       </div>
     {{else}}
       {{#if loggingIn}}
         {{! Not normally visible, but if the user closes the dropdown during login.}}
-        {{> _foundationLoginButtonsLoggingIn}}
+        {{> _loginButtonsLoggingIn}}
       {{else}}
         <a class="login-link-text" id="login-sign-in-link"><span data-i18n="accountsUI.signIn">Sign in</span> ▾</a>
       {{/if}}
@@ -72,16 +72,16 @@
   {{#each services}}
     {{#if isPasswordService}}
       {{#if hasOtherServices}} {{! the password service will always come last }}
-        {{> _foundationLoginButtonsLoggedOutPasswordServiceSeparator}}
+        {{> _loginButtonsLoggedOutPasswordServiceSeparator}}
       {{/if}}
-      {{> _foundationLoginButtonsLoggedOutPasswordService inline=../inline }}
+      {{> _loginButtonsLoggedOutPasswordService inline=../inline }}
     {{else}}
-      {{> _foundationLoginButtonsLoggedOutSingleLoginButton}}
+      {{> _loginButtonsLoggedOutSingleLoginButton}}
     {{/if}}
   {{/each}}
 
   {{#unless hasPasswordService}}
-    {{> _foundationLoginButtonsMessages}}
+    {{> _loginButtonsMessages}}
   {{/unless}}
 </template>
 
@@ -98,14 +98,14 @@
     {{resetLoginFlow}}
   {{/unless}}
   {{#if inForgotPasswordFlow}}
-    {{> _foundationForgotPasswordForm}}
+    {{> _forgotPasswordForm}}
   {{else}}
     <div class="login-form login-password-form">
       {{#each fields}}
-        {{> _foundationLoginButtonsFormField}}
+        {{> _loginButtonsFormField}}
       {{/each}}
 
-      {{> _foundationLoginButtonsMessages}}
+      {{> _loginButtonsMessages}}
 
       <div class="login-button login-button-form-submit" id="login-buttons-password">
         {{#if inSignupFlow}}
@@ -133,12 +133,12 @@
         </div>
         {{#if inline }}
         {{#if canCheckoutAsGuest }}
-          {{> _foundationLoginButtonsBackToGuestLoginLink}}
+          {{> _loginButtonsBackToGuestLoginLink}}
         {{/if}}
         {{/if}}
       {{/if}}
       {{#if inSignupFlow}}
-        {{> _foundationLoginButtonsBackToLoginLink}}
+        {{> _loginButtonsBackToLoginLink}}
       {{/if}}
     </div>
   {{/if}}
@@ -151,12 +151,12 @@
       <input id="forgot-password-email" type="email"/>
     </div>
 
-    {{> _foundationLoginButtonsMessages}}
+    {{> _loginButtonsMessages}}
 
     <div class="login-button login-button-form-submit" id="login-buttons-forgot-password" data-i18n="accountsUI.resetYourPassword">Reset your password
     </div>
 
-    {{> _foundationLoginButtonsBackToLoginLink}}
+    {{> _loginButtonsBackToLoginLink}}
   </div>
 </template>
 
@@ -212,10 +212,10 @@ https://gist.github.com/968927
 
 <template name="_foundationLoginButtonsChangePassword">
   {{#each fields}}
-    {{> _foundationLoginButtonsFormField}}
+    {{> _loginButtonsFormField}}
   {{/each}}
 
-  {{> _foundationLoginButtonsMessages}}
+  {{> _loginButtonsMessages}}
 
   <div class="login-button login-button-form-submit" id="login-buttons-do-change-password" data-i18n="accountsUI.changePassword">
     Change password

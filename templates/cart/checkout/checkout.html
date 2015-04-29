@@ -2,7 +2,7 @@
   {{#if cart.items}}
     <div class="small-12 columns">
       <div class="row cart-checkout-progress">
-        {{> foundationCheckoutProgressBar}}
+        {{> checkoutProgressBar}}
       </div>
       <div class="row cart-checkout-steps">
         <div class="small-12 medium-6 large-8 columns">
@@ -16,13 +16,13 @@
                 </div>
               </div>
             {{else}}
-              <div class="small-12 columns"><i class="checkout-step-badge">1</i>{{> foundationCheckoutLogin}}</div>
+              <div class="small-12 columns"><i class="checkout-step-badge">1</i>{{> checkoutLogin}}</div>
             {{/if}}
           </div>
 
           <div class="row">
             {{#if addressStatus}}
-              <div class="small-12 columns"><i class="{{addressStatus}}">2</i>{{> foundationCheckoutAddressBook}}</div>
+              <div class="small-12 columns"><i class="{{addressStatus}}">2</i>{{> checkoutAddressBook}}</div>
             {{else}}
               <div class="small-12 columns checkout-pending"><i class="checkout-step-badge">2</i></div>
             {{/if}}
@@ -30,7 +30,7 @@
 
           <div class="row">
             {{#if shippingOptionStatus}}
-              <div class="small-12 columns"><i class="{{shippingOptionStatus}}">3</i>{{> foundationCoreCheckoutShipping}}</div>
+              <div class="small-12 columns"><i class="{{shippingOptionStatus}}">3</i>{{> coreCheckoutShipping}}</div>
             {{else}}
             <div class="small-12 columns checkout-pending"><i class="checkout-step-badge">3</i></div>
            {{/if}}
@@ -41,7 +41,7 @@
           {{#if checkoutReviewStatus}}
             <div class="small-12 columns">
               <i class="checkout-step-badge">4</i>
-              {{> foundationCheckoutReview}}
+              {{> checkoutReview}}
             </div>
           {{else}}
             <div class="small-12 columns checkout-pending"><i class="checkout-step-badge">4</i></div>
@@ -52,7 +52,7 @@
           {{#if checkoutReviewStatus}}
             <div class="small-12 columns">
               <i class="checkout-step-badge">4</i>
-              {{> foundationCheckoutPayment}}
+              {{> checkoutPayment}}
             </div>
           {{else}}
             <div class="small-12 columns checkout-pending"><i class="checkout-step-badge">5</i></div>
@@ -61,7 +61,7 @@
       </div>
     </div>
   {{else}}
-    {{> foundationEmptyCheckoutCart}}
+    {{> emptyCheckoutCart}}
   {{/if}}
 </template>
 

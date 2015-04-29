@@ -15,5 +15,3 @@ Router.onAfterAction ->
   #     $footer.css({
   #       'margin-top': height + 'px'
   #     })
-  
-  return

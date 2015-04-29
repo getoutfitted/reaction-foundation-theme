@@ -17,7 +17,7 @@ $(document).mouseup (e) ->
   return
 
 Template.foundationHeaderTags.helpers
-  foundationTagsComponent: ->
+  tagsComponent: ->
     # If we're an admin with the header in edit mode, we display
     # the tag edit form, else the normal header tag links
     if isEditing(currentTag()) and ReactionCore.hasOwnerAccess()

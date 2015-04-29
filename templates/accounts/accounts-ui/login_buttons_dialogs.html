@@ -1,10 +1,10 @@
 <body>
-  {{> _foundationResetPasswordDialog}}
-  {{> _foundationJustResetPasswordDialog}}
-  {{> _foundationEnrollAccountDialog}}
-  {{> _foundationJustVerifiedEmailDialog}}
+  {{> _resetPasswordDialog}}
+  {{> _justResetPasswordDialog}}
+  {{> _enrollAccountDialog}}
+  {{> _justVerifiedEmailDialog}}
   <!-- if we're not showing a dropdown, we need some other place to show messages -->
-  {{> _foundationLoginButtonsMessagesDialog}}
+  {{> _loginButtonsMessagesDialog}}
 </body>
 
 <template name="_foundationResetPasswordDialog">
@@ -20,7 +20,7 @@
         <input id="reset-password-new-password" type="password" />
       </div>
 
-      {{> _foundationLoginButtonsMessages}}
+      {{> _loginButtonsMessages}}
 
       <div class="login-button login-button-form-submit" id="login-buttons-reset-password-button" data-i18n="accountsUI.setPassword">
         Set password
@@ -54,7 +54,7 @@
         <input id="enroll-account-password" type="password" />
       </div>
 
-      {{> _foundationLoginButtonsMessages}}
+      {{> _loginButtonsMessages}}
 
       <div class="login-button login-button-form-submit" id="login-buttons-enroll-account-button" data-i18n="accountsUI.createAccount">
         Create account
@@ -78,7 +78,7 @@
 <template name="_foundationConfigureLoginServiceDialog">
   {{#if visible}}
     <div id="configure-login-service-dialog" class="accounts-dialog accounts-centered-dialog">
-      {{> foundationConfigurationSteps}}
+      {{> configurationSteps}}
 
       <p data-i18n="accountsUI.nowCopyOverSomeDetails">
         Now, copy over some details.
@@ -118,7 +118,7 @@
 <template name="_foundationLoginButtonsMessagesDialog">
   {{#if visible}}
     <div class="accounts-dialog accounts-centered-dialog" id="login-buttons-message-dialog">
-      {{> _foundationLoginButtonsMessages}}
+      {{> _loginButtonsMessages}}
       <div class="login-button" id="messages-dialog-dismiss-button" data-i18n="accountsUI.dismiss">Dismiss</div>
     </div>
   {{/if}}

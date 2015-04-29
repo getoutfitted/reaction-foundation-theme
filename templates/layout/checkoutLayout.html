@@ -1,16 +1,16 @@
 <template name="foundationCheckoutLayout">
   <section class="header-block">
-    {{> yield region="foundationLayoutHeader"}}
+    {{> yield region="checkoutHeader"}}
   </section>
   <nav class="reaction-cart-drawer">{{>foundationCartDrawer}}</nav>
   <div class="reaction-dashboard-drawer">{{> yield region="foundationDashboard"}}</div>
   <main role="main" id="main">
     <div class="row full-width main-container">
       <div class="small-12 large-11 end columns">
-        <span id="layout-alerts">{{>foundationAlerts}}</span>
+        <span id="layout-alerts">{{>bootstrapAlerts}}</span>
         {{> yield}}
       </div>
     </div>
   </main>
-  <footer class="reaction-navigation-footer test-class" id="footer">{{>yield region="foundationLayoutFooter"}}</footer>
+  <footer class="reaction-navigation-footer test-class" id="footer">{{>yield region="layoutFooter"}}</footer>
 </template>

@@ -2,14 +2,14 @@
   <div id="galleryDropPane" class="galleryDropPane">
     <ul class="gallery">
       {{#each media}}
-        {{> foundationImageDetail}}
+        {{> imageDetail}}
       {{else}}
        <li>
           <img src= "/resources/placeholder.gif" class="img-responsive" id="img-upload">
        </li>
       {{/each}}
     </ul>
-    {{> foundationImageUploader}}
+    {{> imageUploader}}
   </div>
 </template>
 

@@ -2,7 +2,7 @@
 # Template Cart Drawer
 # ************************************************************ ###
 Template.foundationCartDrawer.helpers
-  foundationDisplayCartDrawer: ->
+  displayCartDrawer: ->
     unless Session.equals "displayCart", true
       return null
 

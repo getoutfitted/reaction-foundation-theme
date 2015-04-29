@@ -100,3 +100,8 @@ input[type="number"].input-sm {
     color: $alert-color;
   }
 }
+
+// Danger Alert extends alert
+.danger {
+  @extend .alert;
+}
