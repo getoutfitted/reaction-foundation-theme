@@ -1,6 +1,6 @@
 Package.describe({
   name: 'getoutfitted:reaction-foundation-theme',
-  version: '0.0.2',
+  version: '0.0.3',
   summary: 'Zurb Foundation 5 starter theme for ReactionCommerce',
   git: 'https://github.com/getoutfitted/reaction-foundation-theme.git'
 });
@@ -8,17 +8,32 @@ Package.describe({
 Package.onUse(function (api) {
   api.versionsFrom('METEOR@1.0');
   
+  api.use('meteor-platform');
+  api.use('coffeescript');
+  api.use('underscore');
+  api.use('blaze');
+  api.use('reactive-var');
+
   api.use('fourseven:scss@2.0.1_2');
+  api.use('jquery@1.0.0', 'client');
+  api.use('fortawesome:fontawesome@4.2.0_2');
+  api.use('aldeed:autoform@4.2.2');
+  api.use('aldeed:template-extension@3.4.3','client');
+  api.use('iron:router@1.0.7', 'client');
+  api.use('momentjs:moment@2.10.2', 'client');
+  api.use('cfs:ui@0.1.3');
+  api.use('raix:ui-dropped-event@0.0.7');
+  
   api.use('reactioncommerce:core@0.5.7');
     
   api.imply('accounts-base');
   api.imply('ui');
   api.imply('fourseven:scss');
-  api.imply('aldeed:autoform');
-  api.imply('aldeed:template-extension');
-  api.imply('iron:router');
-  api.imply('raix:ui-dropped-event');
-  api.imply('momentjs:moment', 'client');
+  api.imply('aldeed:autoform@4.2.2');
+  api.imply('aldeed:template-extension@3.4.3');
+  api.imply('iron:router@1.0.7');
+  api.imply('raix:ui-dropped-event@0.0.7');
+  api.imply('momentjs:moment@2.10.2', 'client');
   api.imply('reactioncommerce:core');
 
 	api.addFiles([
