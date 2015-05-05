@@ -34,12 +34,14 @@ This file instructs your Meteor app that you have additional source paths for sc
 #### Step 3.
 Move the files located within the `move-these-files` directory - `main.scss` and `_settings.scss` to somewhere within your main Meteor app's `client` directory - such as `client/themes/`
 
+#### Step 4.
+Remove `nemo64:bootstrap` and `reaction:core-theme` from your meteor app. Or at least make sure that `reaction-foundation-theme` comes after them. Recommend that you remove them.
+
 #### Step 5.
 Restart your server.
 You are now running on the scss/foundation based theme instead of the base less/bootstrap core theme.
 
 
-#### Step 6.
 Fork this theme and make it your own.
 
 
