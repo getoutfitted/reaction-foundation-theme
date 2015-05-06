@@ -19,7 +19,11 @@ It contains all of the Templates, Helpers, and Events you need to start theming 
 
 
 #### Step 2.
-Make sure that `scss.json` exists within the root of your app. If it does not, add the `scss.json` file with the following content.
+If `scss.json` does not exist at the root of your meteor app.
+From the root of your Meteor app run:  
+`curl -O https://github.com/getoutfitted/reaction-foundation-theme/tree/master/downloads/scss.json`
+
+If `scss.json` already exists, make sure that it includes the following.
 ```json
 {
   "includePaths": [
@@ -30,9 +34,16 @@ Make sure that `scss.json` exists within the root of your app. If it does not, a
 
 This file instructs your Meteor app that you have additional source paths for scss files located in that package.
 
-
 #### Step 3.
-Move the files located within the `move-these-files` directory - `main.scss` and `_settings.scss` to somewhere within your main Meteor app's `client` directory - such as `client/themes/`
+Run these three commands to download the `main.scss` and `_settings.scss`
+
+`cd client/themes`
+
+`curl -O https://github.com/getoutfitted/reaction-foundation-theme/tree/master/downloads/main.scss`
+
+`curl -O https://github.com/getoutfitted/reaction-foundation-theme/tree/master/downloads/_settings.scss`
+
+This will download the default `main.scss` file which loads all of our scss files in the correct order and `_settings.scss` which has our variable settings.
 
 #### Step 4.
 Remove `nemo64:bootstrap` and `reaction:core-theme` from your meteor app. Or at least make sure that `reaction-foundation-theme` comes after them. Recommend that you remove them.
