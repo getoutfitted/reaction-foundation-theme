@@ -1,0 +1,5 @@
+{
+  "includePaths": [
+    ".meteor/local/build/programs/server/assets/packages/getoutfitted_reaction-foundation-theme/scss/"
+  ]
+}
