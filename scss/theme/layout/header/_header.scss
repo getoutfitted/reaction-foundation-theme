@@ -93,13 +93,6 @@ html.rtl {
         background: $silver;
       }
     }
-    //
-    // .icon-text {
-    //   position: relative;
-    //   bottom: 7px;
-    //   text-align: center;
-    //   font-size: 10px;
-    // }
 
   }
 
@@ -117,6 +110,12 @@ html.rtl {
       color: $topbar-link-color-hover;
       background-color: transparent;
     }
+  }
+  
+  .i18n-chooser .dropdown {
+    padding: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 10px rgba(1,1,1, 0.1);
   }
 }
 

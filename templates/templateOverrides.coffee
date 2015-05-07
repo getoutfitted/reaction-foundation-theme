@@ -14,7 +14,7 @@ Template.foundationCheckoutLayout.replaces 'layout'
 # Header Overrides
 ################################################################
 
-# Keep foundation Version due to the way that Template.template.replaces
+# Keep foundation Version due to the way that Template.foo.replaces
 # brings in events, helpers, and rendered calls from replaced template.
 # Currently seems like we can only use `replaces` for templates that don't need
 # different logic.
