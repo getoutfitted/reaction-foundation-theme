@@ -1,6 +1,6 @@
 Package.describe({
   name: 'getoutfitted:reaction-foundation-theme',
-  version: '0.0.5',
+  version: '0.0.6',
   summary: 'Zurb Foundation 5 starter theme for ReactionCommerce',
   git: 'https://github.com/getoutfitted/reaction-foundation-theme.git'
 });

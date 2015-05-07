@@ -19,39 +19,38 @@ It contains all of the Templates, Helpers, and Events you need to start theming 
 
 
 #### Step 2.
-If `scss.json` does not exist at the root of your meteor app.
-From the root of your Meteor app run:  
-`curl -O https://github.com/getoutfitted/reaction-foundation-theme/tree/master/downloads/scss.json`
 
-If `scss.json` already exists, make sure that it includes the following.
-```json
-{
-  "includePaths": [
-    ".meteor/local/build/programs/server/assets/packages/getoutfitted_reaction-foundation-theme/scss/"
-  ]
-}
-```
+From the root of your Meteor app run:  
+`curl -L -O https://raw.github.com/getoutfitted/reaction-foundation-theme/master/downloads/scss.json`
 
 This file instructs your Meteor app that you have additional source paths for scss files located in that package.
 
 #### Step 3.
-Run these three commands to download the `main.scss` and `_settings.scss`
+Run
 
-`cd client/themes`
+1. `cd client/themes`
 
-`curl -O https://github.com/getoutfitted/reaction-foundation-theme/tree/master/downloads/main.scss`
+2. `curl -L -O https://raw.github.com/getoutfitted/reaction-foundation-theme/master/downloads/main.scss`
 
-`curl -O https://github.com/getoutfitted/reaction-foundation-theme/tree/master/downloads/_settings.scss`
+3. `curl -L -O https://raw.github.com/getoutfitted/reaction-foundation-theme/master/downloads/_settings.scss`
 
-This will download the default `main.scss` file which loads all of our scss files in the correct order and `_settings.scss` which has our variable settings.
+This will download the default `main.scss` file which loads all of our scss files in the correct order and `_settings.scss` which has our variable settings. You can edit these files, particularly `_settings.scss` to customize this theme to your needs.
 
 #### Step 4.
-Remove `nemo64:bootstrap` and `reaction:core-theme` from your meteor app. Or at least make sure that `reaction-foundation-theme` comes after them. Recommend that you remove them.
+Remove or disable the `nemo64:bootstrap` and `reaction:core-theme` packages as well as the default theme `.json` bootstrap config files in the `client/themes` directory.
+
+To disable these packages open the file `.meteor/packages` and add `#` in front of the lines with `nemo64:bootstrap` and `reaction:core-theme`
+
+You can delete `custom.bootstrap.json` and `custom.reaction.json` or if you want to keep them, just give it a new extension (e.g. `custom.reaction.json.backup`)
+
 
 #### Step 5.
-Restart your server.
+In the `client/templates/layout/footer/footer.coffee` file, comment out `line 13` `Template.footer.replaces "LayoutFooter"`
+
+Start your server.
 You are now running on the scss/foundation based theme instead of the base less/bootstrap core theme.
 
+Note: If you get a `Scss compiler error: file to import not found or unreadable` just restart your server. This should only happen once and I think it's because the scss compiler is looking for files that aren't built yet.
 
 Fork this theme and make it your own.
 
