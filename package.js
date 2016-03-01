@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'zurb:foundation-sites',
-  summary: 'Foundation 6 - The most advanced responsive front-end framework in the world.',
-  version: '6.2.0',
-  git: 'https://github.com/zurb/foundation-sites.git',
+  name: 'getoutfitted:foundation-theme',
+  summary: 'Zurb Foundation 6 as a ReactionCommerce Theme - The most advanced responsive front-end framework in the world.',
+  version: '1.0.0',
+  git: 'https://github.com/getoutfitted/foundation-theme.git',
   documentation: 'meteor-README.md'
 });
 
@@ -10,7 +10,7 @@ Npm.depends({
   'motion-ui': '1.1.0'
 });
 
-Package.onUse(function(api) {
+Package.onUse(function (api) {
   api.versionsFrom('1.2.1');
   api.imply('fourseven:scss@3.4.1');
   api.use(['ecmascript', 'jquery', 'fourseven:scss@3.4.1'], 'client');
@@ -34,11 +34,13 @@ Package.onUse(function(api) {
     'scss/components/_drilldown.scss',
     'scss/components/_dropdown-menu.scss',
     'scss/components/_dropdown.scss',
+    'scss/components/_flex.scss',
     'scss/components/_flex-video.scss',
     'scss/components/_float.scss',
     'scss/components/_label.scss',
     'scss/components/_media-object.scss',
     'scss/components/_menu.scss',
+    'scss/components/_menu-icon.scss',
     'scss/components/_off-canvas.scss',
     'scss/components/_orbit.scss',
     'scss/components/_pagination.scss',
@@ -62,6 +64,9 @@ Package.onUse(function(api) {
     'scss/forms/_help-text.scss',
     'scss/forms/_input-group.scss',
     'scss/forms/_label.scss',
+    'scss/forms/_meter.scss',
+    'scss/forms/_progress.scss',
+    'scss/forms/_range.scss',
     'scss/forms/_select.scss',
     'scss/forms/_text.scss',
 
@@ -83,11 +88,12 @@ Package.onUse(function(api) {
 
     'scss/util/_breakpoint.scss',
     'scss/util/_color.scss',
+    'scss/util/_flex.scss',
     'scss/util/_mixins.scss',
     'scss/util/_selector.scss',
     'scss/util/_unit.scss',
     'scss/util/_util.scss',
     'scss/util/_value.scss'
-    
+
   ], 'client', {isImport: true});
 });
